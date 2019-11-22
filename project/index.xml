@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Jiashuo Tong</title>
+    <link>https://diditong.github.io/project/</link>
+      <atom:link href="https://diditong.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 15 Nov 2019 00:22:21 +0000</lastBuildDate>
+    <image>
+      <url>https://diditong.github.io/img/icon-192.png</url>
+      <title>Projects</title>
+      <link>https://diditong.github.io/project/</link>
+    </image>
+    
+    <item>
+      <title>FEM And Deep Learning For Solving PDE&#39;s</title>
+      <link>https://diditong.github.io/project/fem-and-deep-learning/</link>
+      <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
+      <guid>https://diditong.github.io/project/fem-and-deep-learning/</guid>
+      <description>&lt;p&gt;ssss&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GAN For Style Transfer</title>
+      <link>https://diditong.github.io/project/gan-for-style-transfer/</link>
+      <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
+      <guid>https://diditong.github.io/project/gan-for-style-transfer/</guid>
+      <description>&lt;p&gt;ssss&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Photo Mosaic</title>
+      <link>https://diditong.github.io/project/photo-mosaic/</link>
+      <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
+      <guid>https://diditong.github.io/project/photo-mosaic/</guid>
+      <description>&lt;p&gt;ssss&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1661 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>An example title | Jiashuo Tong</title>
+    <link>https://diditong.github.io/post/</link>
+      <atom:link href="https://diditong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>An example title</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://diditong.github.io/img/icon-192.png</url>
+      <title>An example title</title>
+      <link>https://diditong.github.io/post/</link>
+    </image>
+    
+    <item>
+      <title>Jiashuo&#39;s Programming Exercise</title>
+      <link>https://diditong.github.io/post/algorithms/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://diditong.github.io/post/algorithms/</guid>
+      <description>&lt;h3 id=&#34;this-is-a-documentation-for-my-implementations-of-algorithms-i-learned-from-classes&#34;&gt;This is a documentation for my implementations of algorithms I learned from classes&lt;/h3&gt;
+
+&lt;h2 id=&#34;1-karatsuba-multiplication&#34;&gt;1. Karatsuba Multiplication&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def KaraMult(x,y):
+    if len(str(x)) == 1 or len(str(y)) == 1:
+        return x*y
+    
+    else:
+        n = max(len(str(x)),len(str(y)))
+        n2 = n // 2
+            
+        a = x // 10**(n2)
+        b = x % 10**(n2)
+        c = y // 10**(n2)
+        d = y % 10**(n2)
+        
+        ac = KaraMult(a,c)
+        bd = KaraMult(b,d)
+        ad_plus_bc = KaraMult(a+b,c+d) - ac - bd
+        
+        prod = ac * 10**(2*n2) + (ad_plus_bc * 10**n2) + bd
+
+        return prod
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-merge-sort&#34;&gt;2. Merge Sort&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def mergesort(alist):
+    if (len(alist)&amp;gt;1):
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+        mergesort(lefthalf)
+        mergesort(righthalf)
+        
+        i,j,k=0,0,0
+        while (i&amp;lt;len(lefthalf) and j&amp;lt;len(righthalf)):
+            if (lefthalf[i]&amp;lt;righthalf[j]):
+                alist[k]=lefthalf[i]
+                i+=1
+            else:
+                alist[k]=righthalf[j]
+                j+=1
+            k+=1
+        while(i&amp;lt;len(lefthalf)):
+            alist[k]=lefthalf[i]
+            i+=1
+            k+=1
+        while(j&amp;lt;len(righthalf)):
+            alist[k]=righthalf[j]
+            j+=1
+            k+=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;3-merge-sort-returns-sorted-list&#34;&gt;3. Merge Sort (returns sorted list)&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def mergesort(alist):
+    if (len(alist)&amp;gt;1):
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+        mergesort(lefthalf)
+        mergesort(righthalf)
+        
+        i,j,k=0,0,0
+        while (i&amp;lt;len(lefthalf) and j&amp;lt;len(righthalf)):
+            if (lefthalf[i]&amp;lt;righthalf[j]):
+                alist[k]=lefthalf[i]
+                i+=1
+            else:
+                alist[k]=righthalf[j]
+                j+=1
+            k+=1
+        while(i&amp;lt;len(lefthalf)):
+            alist[k]=lefthalf[i]
+            i+=1
+            k+=1
+        while(j&amp;lt;len(righthalf)):
+            alist[k]=righthalf[j]
+            j+=1
+            k+=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;4-quick-sort-with-the-last-element-as-the-pivot&#34;&gt;4. Quick Sort (with the last element as the pivot)&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+{% highlight python %}
+import numpy as np
+def swap(array,m,n):
+    a = array[m]
+    array[m] = array[n]
+    array[n] = a
+
+def quickSort(array,l,r):
+    if (l&amp;lt;r):
+        swap(array,r,l)  #always set the final element as the pivot
+        p = partition(array,l,r)
+        quickSort(array,l,p-1)
+        quickSort(array,p+1,r)
+
+def partition(array,l,r):
+    pivot = array[l]
+    #stat.median([array[l],array[(l+r)//2],array[r]])
+    i = l+1
+    for j in range(l+1,r+1):
+        if (array[j] &amp;lt; pivot):
+            swap(array,i,j)
+            i+=1
+    swap(array,i-1,l)
+    return i-1
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;5-count-inversions-with-mergesort-subroutine&#34;&gt;5. Count Inversions (with mergeSort() subroutine)&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def mergeSort(alist):
+    right = len(alist)
+    mid = right//2
+    if (right == 1):
+        return alist
+    if (0 &amp;lt; mid):      
+        lefthalf = mergeSort(alist[:mid])
+    if (mid &amp;lt; right):  
+        righthalf = mergeSort(alist[mid:])
+
+    i=0
+    j=0
+    sortedlist = []
+        
+    while(i&amp;lt;mid and j&amp;lt;right-mid):
+        if(lefthalf[i]&amp;lt;=righthalf[j]):
+            sortedlist.append(lefthalf[i])
+            i+=1
+        else:
+            sortedlist.append(righthalf[j])
+            j+=1
+            
+    while(i&amp;lt;mid):
+        sortedlist.append(lefthalf[i])
+        i+=1
+    while(j&amp;lt;right-mid):
+        sortedlist.append(righthalf[j])
+        j+=1
+    return sortedlist
+	
+def countInversions(array):
+    if (len(array)==1):
+        return 0
+    mid = len(array)//2
+    num_invs_left = countInversions(array[:mid])
+    num_invs_right = countInversions(array[mid:])
+    
+    lefthalf = mergeSort(array[:mid])
+    righthalf = mergeSort(array[mid:])
+    i=j=0
+    num_invs_between = 0
+    while (j&amp;lt;len(righthalf) and i&amp;lt;len(lefthalf)):
+        if (righthalf[j]&amp;gt;lefthalf[i]):
+            i+=1
+        else:
+            num_invs_between+=len(lefthalf)-i
+            j+=1
+    
+    return num_invs_left+num_invs_right+num_invs_between
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;6-rselect-random-select-with-partition-subroutine&#34;&gt;6. RSelect (Random Select with partition subroutine)&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def swap(array,m,n):
+    a = array[m]
+    array[m] = array[n]
+    array[n] = a
+
+def partition(array,l,r):
+    i_pivot = np.random.randint(r)
+    swap(array,i_pivot,l)
+    pivot = array[l]
+    #stat.median([array[l],array[(l+r)//2],array[r]])
+    i = l+1
+    for j in range(l+1,r):
+        if (array[j] &amp;lt; pivot):
+            swap(array,i,j)
+            i+=1
+    swap(array,l,i-1)
+    return i
+
+def RSelect(A,i):
+    length = len(A)
+    if length == 1:
+        return A[i]
+    j = partition(A,0,length)
+    if j+1 == i:
+        return A[j]
+    elif j+1 &amp;lt; i:
+        return RSelect(A[j:],i-j)
+    else:
+        return RSelect(A[0:j],i)
+
+for i in range(1000):
+    kargerDict = backupDict.copy()
+    for i in range(198):
+        #Remove the chosen connection from the dictionary
+        delete = list(kargerDict)[np.random.randint(len(kargerDict))]
+        i1 = delete[0]
+        i2 = delete[1]
+        del kargerDict[delete]
+        #Transfer the count from old connections to new connections
+        for old_key in kargerDict.copy():
+            x,y = old_key[0],old_key[1]
+            if x == i2:
+                m = i1
+                n = y
+            elif y == i2:
+                m = i1
+                n = x
+            else:
+                continue
+            m,n = sorted([m,n])
+            new_key = (m,n)
+            if new_key in kargerDict.keys():
+                kargerDict[new_key] += kargerDict[old_key]
+            else:
+                kargerDict[new_key] = kargerDict[old_key]
+            del kargerDict[old_key]
+    if mincut &amp;gt; list(kargerDict.values())[0]:
+        mincut = list(kargerDict.values())[0]
+    print(&amp;quot;Cut for current iteration is: &amp;quot;, mincut)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;7-karger-algorithm-for-counting-minimum-cut&#34;&gt;7. Karger algorithm for counting minimum cut&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;kargerDict = {}
+#Read the text file into a dictionary
+with open(&#39;kargerMinCut.txt&#39;, &#39;r&#39;) as f:
+    i = 0
+    while i &amp;lt; 200:
+        line = f.readline()
+        line = line.split(&#39;\t&#39;)
+        line = line[:-1]
+        
+        idx = 0
+        for string in line:
+            line[idx] = int(string)
+            idx += 1
+        
+        m = line[0]
+        for j in range(1,len(line)):
+            n = line[j]
+            if n &amp;gt; m:
+                kargerDict[(m,n)] = 1
+        i += 1
+    for i in range(1,201):
+        for j in range(i+1,201):
+            if (i,j) not in kargerDict.keys():
+                kargerDict[(i,j)] = 0
+    #Backup the dictionary for further processing
+    backupDict = kargerDict
+mincut = 10000
+
+for i in range(1000):
+    kargerDict = backupDict.copy()
+    for i in range(198):
+        #Remove the chosen connection from the dictionary
+        delete = list(kargerDict)[np.random.randint(len(kargerDict))]
+        i1 = delete[0]
+        i2 = delete[1]
+        del kargerDict[delete]
+        #Transfer the count from old connections to new connections
+        for old_key in kargerDict.copy():
+            x,y = old_key[0],old_key[1]
+            if x == i2:
+                m = i1
+                n = y
+            elif y == i2:
+                m = i1
+                n = x
+            else:
+                continue
+            m,n = sorted([m,n])
+            new_key = (m,n)
+            if new_key in kargerDict.keys():
+                kargerDict[new_key] += kargerDict[old_key]
+            else:
+                kargerDict[new_key] = kargerDict[old_key]
+            del kargerDict[old_key]
+    if mincut &amp;gt; list(kargerDict.values())[0]:
+        mincut = list(kargerDict.values())[0]
+    print(&amp;quot;Cut for current iteration is: &amp;quot;, mincut)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;8-dijkstras-algorithm&#34;&gt;8. Dijkstra&#39;s Algorithm&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;cstring&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;fstream&amp;gt;
+#include &amp;lt;limits&amp;gt;
+
+using namespace std;
+
+struct Edge
+{
+	int dest, weight;
+};
+
+struct AdjList
+{
+	int src;
+	vector&amp;lt;Edge&amp;gt; list;
+};
+
+struct Node
+{
+	int idx;
+	int dist;
+	bool visited;
+};
+
+class Graph
+{
+public:
+	vector&amp;lt;Node&amp;gt; nodes;
+	vector&amp;lt;AdjList&amp;gt; graph;
+	
+	Graph(string filename);
+	int getSize();
+	vector&amp;lt;int&amp;gt; Dijkstra(int start, vector&amp;lt;int&amp;gt; ends);
+	int setMinNode();
+	bool existNonVisited();
+};
+
+vector&amp;lt;string&amp;gt; split(string&amp;amp; line, char delimiter)
+{
+	vector&amp;lt;string&amp;gt; v;
+	string token;
+	for (char const c: line)
+	{
+		if (c == delimiter)
+		{
+			v.push_back(token);
+			token.clear();
+		}
+		else
+		{
+			token += c;
+		}
+	}
+	v.push_back(token);
+	return v;
+}
+
+Graph::Graph(string filename)
+{
+	string line;
+	ifstream myfile(filename);
+	
+	if (myfile.is_open())
+	{
+		while ( getline(myfile,line) )
+		{
+			//Read a single line into edge and list
+			vector&amp;lt;string&amp;gt; splt1 = split(line, &#39; &#39;);
+			splt1.pop_back();
+			AdjList l;
+			l.src = stoi(splt1[0]);
+			
+			for (int i=1; i&amp;lt;splt1.size(); i++)
+			{
+				vector&amp;lt;string&amp;gt; splt2 = split(splt1[i], &#39;,&#39;);
+
+				Edge e;		
+				e.dest = stoi(splt2[0]);
+				e.weight = stoi(splt2[1]);
+				
+				l.list.push_back(e);
+			}
+			
+			graph.push_back(l);
+			
+		}
+		
+	myfile.close();
+	
+	}
+}
+
+int Graph::getSize()
+{
+	return graph.size();
+}
+
+int Graph::setMinNode()
+{
+	int min_idx = 0;
+	for (int curr_idx=1; curr_idx&amp;lt;nodes.size(); curr_idx++)
+	{	
+		//cout &amp;lt;&amp;lt; &amp;quot;From setMinNode: Node &amp;quot; &amp;lt;&amp;lt; curr_idx &amp;lt;&amp;lt; &amp;quot; is visited? &amp;quot; &amp;lt;&amp;lt; nodes[curr_idx].visited &amp;lt;&amp;lt; endl;
+		//cout &amp;lt;&amp;lt; &amp;quot;From setMinNode: Node &amp;quot; &amp;lt;&amp;lt; curr_idx &amp;lt;&amp;lt; &amp;quot; has a value &amp;quot; &amp;lt;&amp;lt; nodes[curr_idx].dist &amp;lt;&amp;lt; endl;
+		if (!nodes[curr_idx].visited)
+		{
+			// &amp;lt;&amp;lt; &amp;quot;curr_idx is &amp;quot; &amp;lt;&amp;lt; curr_idx &amp;lt;&amp;lt; &amp;quot;, dist is &amp;quot; &amp;lt;&amp;lt; nodes[curr_idx].dist &amp;lt;&amp;lt; endl;
+			if (nodes[curr_idx].dist &amp;lt; nodes[min_idx].dist)
+			{
+				min_idx = curr_idx;
+			}
+		}
+	}
+	//cout &amp;lt;&amp;lt; &amp;quot;Minimum Index is &amp;quot; &amp;lt;&amp;lt; min_idx &amp;lt;&amp;lt; endl;
+	//cout &amp;lt;&amp;lt; &amp;quot;returned min_idx is &amp;quot; &amp;lt;&amp;lt; min_idx &amp;lt;&amp;lt; endl; 
+	return min_idx;
+}
+
+bool Graph::existNonVisited()
+{
+	for (int curr_idx=1; curr_idx&amp;lt;nodes.size(); curr_idx++)
+	{
+		if (nodes[curr_idx].visited == false)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+vector&amp;lt;int&amp;gt; Graph::Dijkstra(int start, vector&amp;lt;int&amp;gt; ends)
+{
+	//Mark initial node with a weight 0. Mark the rest nodes with infinity.
+	Node firstNode = {
+		0, numeric_limits&amp;lt;int&amp;gt;::max(), true
+	};
+	nodes.push_back(firstNode);
+	//
+	int sz = graph.size();
+	Node n = {
+		1, 0, false
+	};
+	nodes.push_back(n);
+
+	for (int i=2; i&amp;lt;=sz ; i++)
+	{
+		Node n = {
+			i, numeric_limits&amp;lt;int&amp;gt;::max(), false
+		};
+		nodes.push_back(n);
+	}
+	
+	while (existNonVisited())
+	{
+		//Set the non-visited node with the minimum current distance as the current node C.
+		int c_idx = setMinNode();
+		//For each neighbor n, add c with c-n. If smaller than current weight of n, set it as 
+		//new distance of n.
+		for (Edge e : graph[c_idx-1].list)
+		{
+			//cout &amp;lt;&amp;lt; &amp;quot;Size of the list is &amp;quot; &amp;lt;&amp;lt; graph[c_idx-1].list.size() &amp;lt;&amp;lt; endl;
+			//cout &amp;lt;&amp;lt; &amp;quot;dest &amp;quot; &amp;lt;&amp;lt; e.dest &amp;lt;&amp;lt; &amp;quot; is visited? &amp;quot; &amp;lt;&amp;lt; nodes[e.dest].visited &amp;lt;&amp;lt; endl;
+			if (!nodes[e.dest].visited)
+			{
+				//cout &amp;lt;&amp;lt; &amp;quot;node &amp;quot; &amp;lt;&amp;lt; c_idx &amp;lt;&amp;lt; &amp;quot; is compared to &amp;quot; &amp;lt;&amp;lt; e.dest &amp;lt;&amp;lt; endl;
+				if (nodes[c_idx].dist + e.weight &amp;lt; nodes[e.dest].dist)
+				{
+					nodes[e.dest].dist = nodes[c_idx].dist + e.weight;
+				}
+			}
+		}
+		//set current node to be visited
+		//cout &amp;lt;&amp;lt; nodes[c_idx].idx &amp;lt;&amp;lt; endl;
+		nodes[c_idx].visited = true;
+	}
+	
+	//Generate the final distance list for output
+	vector&amp;lt;int&amp;gt; shortestDistances;
+	for (int end : ends) 
+	{
+		shortestDistances.push_back(nodes[end].dist);
+	}
+	return shortestDistances;
+	
+}
+
+int main() 
+{
+	Graph G = Graph(&amp;quot;dijkstraData.txt&amp;quot;);
+	//cout &amp;lt;&amp;lt; G.graph[0].list[0].weight &amp;lt;&amp;lt; endl;
+	vector&amp;lt;int&amp;gt; endpoints = {7,37,59,82,99,115,133,165,188,197};
+	for (int distance : G.Dijkstra(1,endpoints))
+	{
+		cout &amp;lt;&amp;lt; distance &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+	}
+	cout &amp;lt;&amp;lt; endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Jiashuo&#39;s LeetCode Exercise</title>
+      <link>https://diditong.github.io/post/leetcode/</link>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>https://diditong.github.io/post/leetcode/</guid>
+      <description>&lt;h3 id=&#34;this-is-a-documentation-for-leetcodes&#34;&gt;This is a documentation for LeetCodes&lt;/h3&gt;
+
+&lt;h2 id=&#34;leetcode-009&#34;&gt;LeetCode 009&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+
+using namespace std;
+/*Revert the whole number
+//Problematic for very large number
+bool isPalindrome(int x) {
+        if (x &amp;lt; 0) return false;
+	int x1 = x;
+	int x2 = 0;
+	int lastdig = 0;
+	while (x != 0) {
+		lastdig = x%10;
+		x = x/10;
+		x2 = x2*10+lastdig; 
+	}
+	if (x1 == x2) return true;
+	else return false;
+}
+*/
+
+//Revert half of the number
+bool isPalindrome(int x) {
+	if (x &amp;lt; 0) return false;
+	//special case: x = 0 or x = 10;
+	if (x &amp;gt; 0 &amp;amp;&amp;amp; x%10 == 0) return false;
+	int x1 = x;
+	int x2 = 0;
+	while (x1 &amp;gt; x2) {
+	    x2 = x2*10 + x1%10;
+	    x1 = x1/10;
+	}
+	if (x1 == x2) return true;
+	if (x2/10 == x1) return true;
+	return false;
+}
+
+
+int main() {
+	cout &amp;lt;&amp;lt; isPalindrome(123321) &amp;lt;&amp;lt; endl;	
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-011&#34;&gt;LeetCode 011&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+
+using namespace std;
+/*
+int calculateArea(int h1, int h2, dis) {
+	int h = min(h1,h2);
+	int area = h*dis;
+	return area;
+}
+*/	
+
+int maxArea(vector&amp;lt;int&amp;gt;&amp;amp; height) {
+	int len = height.size();
+	int l = 0;
+	int r = len-1;
+	int area = 0;
+	while (l &amp;lt; r)
+	{
+		area = max(area, min(height[l],height[r])*(r-l));
+		if (height[l]&amp;lt;height[r])
+		{
+			l++;
+		}
+		else 
+		{
+			r--;
+		}
+	}
+	return area;
+}
+
+int main(){
+	vector&amp;lt;int&amp;gt; sides;
+	sides.push_back(1);
+	sides.push_back(8);
+	sides.push_back(6);
+	sides.push_back(2);
+	sides.push_back(5);
+	sides.push_back(4);
+	sides.push_back(8);
+	sides.push_back(3);
+	sides.push_back(7);
+	int Amax = maxArea(sides);
+	cout &amp;lt;&amp;lt; Amax &amp;lt;&amp;lt; endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-017&#34;&gt;LeetCode 017&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+
+using namespace std;
+
+void helper(vector&amp;lt;string&amp;gt; &amp;amp;vec, string str, int nos) {
+	if (nos == 0) {
+		vec.push_back(str);
+		return;
+	}
+	//Update last digit and remaining number
+	int lastdig = nos % 10;
+	nos = nos/10;
+	//Map the last digit to ASCII values
+	//Number 7, 8 and 9 are special cases
+	if (lastdig == 7) {
+		helper(vec, char(112) + str, nos);
+		helper(vec, char(113) + str, nos);
+		helper(vec, char(114) + str, nos);
+		helper(vec, char(115) + str, nos);
+	}
+	else if (lastdig == 8) {
+		helper(vec, char(116) + str, nos);
+		helper(vec, char(117) + str, nos);
+		helper(vec, char(118) + str, nos);
+	}
+	else if (lastdig == 9) {
+		helper(vec, char(119) + str, nos);
+		helper(vec, char(120) + str, nos);
+		helper(vec, char(121) + str, nos);
+		helper(vec, char(122) + str, nos);
+	}
+	else {
+		int ascii1 = 3*lastdig+91;
+		int ascii2 = 3*lastdig+92;
+		int ascii3 = 3*lastdig+93;
+		//Convert the ASCII values to characters
+		//Run the recursion function helper until the condition nos = 0 is met
+		helper(vec, char(ascii1) + str, nos);
+		helper(vec, char(ascii2) + str, nos);
+		helper(vec, char(ascii3) + str, nos);
+	}
+}
+
+//Encounted error (solved): terminate called after throwing an instance of &#39;std::invalid_argument&#39;
+//what():  stoi
+//Never forget to consider trivial cases
+vector&amp;lt;string&amp;gt; letterCombinations(string digits) {
+	vector&amp;lt;string&amp;gt; combos;
+	if (digits == &amp;quot;&amp;quot;) {}
+	else {
+		int numbers = std::stoi(digits);
+		helper(combos, &amp;quot;&amp;quot;, numbers);
+	}
+	return combos;
+}
+
+int main() {
+	vector&amp;lt;string&amp;gt; letcoms = letterCombinations(&amp;quot;&amp;quot;);
+	for (vector&amp;lt;string&amp;gt;::iterator it = letcoms.begin(); it != letcoms.end(); ++it) {
+		cout &amp;lt;&amp;lt; *it&amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+	}
+	cout &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+	return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-021&#34;&gt;LeetCode 021&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;// Header file for input output functions 
+#include&amp;lt;iostream&amp;gt;  
+
+using namespace std; 
+
+ // Definition for singly-linked list.
+/*
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+*/
+
+#include &amp;quot;ListNode.h&amp;quot;
+
+
+ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+    ListNode* c1 = l1;
+    ListNode* c2 = l2;
+    ListNode* curr = NULL;
+    ListNode* Merged = NULL;
+    
+    if (l1 == NULL &amp;amp;&amp;amp; l2 == NULL) {return NULL;}
+    if (l1 == NULL &amp;amp;&amp;amp; l2 != NULL) {return l2;}
+    if (l1 != NULL &amp;amp;&amp;amp; l2 == NULL) {return l1;}
+    if (l1-&amp;gt;val &amp;lt;= l2-&amp;gt;val) {
+        Merged = new ListNode(l1-&amp;gt;val);
+        curr = Merged;
+        c1 = c1-&amp;gt;next;
+    }
+    else {
+        Merged = new ListNode(l2-&amp;gt;val);
+        curr = Merged;
+        c2 = c2-&amp;gt;next;
+    }
+    while (c1 != NULL &amp;amp;&amp;amp; c2 != NULL) {
+        cout &amp;lt;&amp;lt; &amp;quot;Reached Here1&amp;quot; &amp;lt;&amp;lt; endl;
+
+        if (c1-&amp;gt;val &amp;lt;= c2-&amp;gt;val){
+            cout &amp;lt;&amp;lt; &amp;quot;Reached Here2&amp;quot; &amp;lt;&amp;lt; endl;
+ 	    ListNode* NewNode = new ListNode(c1-&amp;gt;val);
+	    curr-&amp;gt;next = NewNode;
+            c1 = c1-&amp;gt;next;            
+        }
+        else {
+	    curr-&amp;gt;next = new ListNode(c2-&amp;gt;val);
+            c2 = c2-&amp;gt;next; 
+ 	}
+        curr = curr-&amp;gt;next;
+    }
+    if (c1 == NULL) {
+        while (c2 != NULL){
+            curr-&amp;gt;next = new ListNode(c2-&amp;gt;val);
+            c2 = c2-&amp;gt;next;
+            curr = curr-&amp;gt;next;
+        }
+    }
+    else if (c2 == NULL) {
+        while (c1 != NULL){
+            curr-&amp;gt;next = new ListNode(c1-&amp;gt;val);
+            c1 = c1-&amp;gt;next;
+            curr = curr-&amp;gt;next;
+        }
+    }
+    return Merged;
+}
+
+
+ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+	ListNode* h1 = l1;
+	ListNode* h2 = l2;
+	ListNode* h1t = NULL;
+	ListNode* h2t = NULL;
+	ListNode* head;
+	int smaller;
+	if (h1 == NULL)
+	{
+		return h2;
+	}
+	if (h2 == NULL)
+	{
+		return h1;
+	}
+	if (h2-&amp;gt;val &amp;lt; h1-&amp;gt;val)
+	{
+		head = h2;
+		h2t = h2;
+		h2 = h2-&amp;gt;next;
+		h2t-&amp;gt;next = h1;
+		smaller = 1;
+	}
+	else
+	{
+		head = h1;
+		h1t = h1;
+		h1 = h1-&amp;gt;next;
+		h1t-&amp;gt;next = h2;
+		smaller = 0;
+	}
+	while (h1!=NULL and h2!=NULL)
+	{
+		if (smaller == 1)
+		{
+			if (h2-&amp;gt;val &amp;lt; h1-&amp;gt;val)
+			{
+				h2t-&amp;gt;next = h2;
+				h2t = h2;
+				h2 = h2-&amp;gt;next;
+				h2t-&amp;gt;next = h1;
+			}
+			else
+			{
+				h1t = h1;
+				h1 = h1-&amp;gt;next;
+				h1t-&amp;gt;next = h2;
+				smaller = 0;
+			}
+		}
+		else
+		{
+			if (h1-&amp;gt;val &amp;lt; h2-&amp;gt;val) 
+			{
+				h1t-&amp;gt;next = h1;
+				h1t = h1;
+				h1 = h1-&amp;gt;next;
+				h1t-&amp;gt;next = h2;
+			}
+			else
+			{
+				h2t = h2;
+				h2 = h2-&amp;gt;next;
+				h2t-&amp;gt;next = h1;
+				smaller = 1;
+			}
+		}
+	}
+	return head;
+}
+
+// main function -0 
+// where the execution of program begins 
+int main() 
+{ 
+    //Build two lists, l1 and l2
+    ListNode* l1 = new ListNode(1);
+    ListNode* second1 = new ListNode(2);
+    ListNode* third1 = new ListNode(4);
+    l1-&amp;gt;next = second1;
+    second1-&amp;gt;next = third1;
+
+    ListNode* l2 = new ListNode(1);
+    ListNode* second2 = new ListNode(3);
+    ListNode* third2 = new ListNode(4);
+    l2-&amp;gt;next = second2;
+    second2-&amp;gt;next = third2;
+    
+    ListNode* MergedList = mergeTwoLists(l1,l2);
+    for (ListNode* i = MergedList; i != NULL;) {
+        cout &amp;lt;&amp;lt; i-&amp;gt;val &amp;lt;&amp;lt; endl;
+        i = i-&amp;gt;next;
+    }
+    return 0;
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-022&#34;&gt;LeetCode 022&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;// Simple C++ program to display &amp;quot;Hello World&amp;quot; 
+  
+// Header file for input output functions 
+#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+using namespace std; 
+
+//NOTE: Must use ALIASING here.
+void helper (vector&amp;lt;string&amp;gt; &amp;amp;vec, string s, int p, int q, int n) {
+	if (q == n) {
+		vec.push_back(s);
+		cout &amp;lt;&amp;lt; &amp;quot;Pushed string is &amp;quot; &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl;
+		cout &amp;lt;&amp;lt; &amp;quot;Vector address is &amp;quot; &amp;lt;&amp;lt; &amp;amp;vec &amp;lt;&amp;lt; endl;
+		cout &amp;lt;&amp;lt; &amp;quot;Vector size is &amp;quot; &amp;lt;&amp;lt; vec.size() &amp;lt;&amp;lt; endl;
+		return;
+	}
+	
+	/*WRONG_METHOD: 
+	if (p == q &amp;amp;&amp;amp; p &amp;lt; n) {
+		cout &amp;lt;&amp;lt; &amp;quot;IF1: &amp;quot; &amp;lt;&amp;lt; &amp;quot;p = &amp;quot; &amp;lt;&amp;lt; p &amp;lt;&amp;lt; &amp;quot;, q = &amp;quot; &amp;lt;&amp;lt; q &amp;lt;&amp;lt; endl;
+		helper(vec, s + &amp;quot;(&amp;quot;, p + 1, q, n);
+	}
+	else if (p == q &amp;amp;&amp;amp; p == n) {
+		cout &amp;lt;&amp;lt; &amp;quot;IF2: &amp;quot; &amp;lt;&amp;lt; &amp;quot;p = &amp;quot; &amp;lt;&amp;lt; p &amp;lt;&amp;lt; &amp;quot;, q = &amp;quot; &amp;lt;&amp;lt; q &amp;lt;&amp;lt; endl;
+		helper(vec, s + &amp;quot;)&amp;quot;, p, q + 1, n);	
+	}
+	else {
+		cout &amp;lt;&amp;lt; &amp;quot;IF3: &amp;quot; &amp;lt;&amp;lt; &amp;quot;p = &amp;quot; &amp;lt;&amp;lt; p &amp;lt;&amp;lt; &amp;quot;, q = &amp;quot; &amp;lt;&amp;lt; q &amp;lt;&amp;lt; endl;
+		helper(vec, s + &amp;quot;(&amp;quot;, p + 1, q, n);
+		helper(vec, s + &amp;quot;)&amp;quot;, p, q + 1, n);
+	}
+	*/
+	
+	if (p &amp;lt; n) {
+		cout &amp;lt;&amp;lt; &amp;quot;p = &amp;quot; &amp;lt;&amp;lt; p &amp;lt;&amp;lt; &amp;quot; &amp;lt; &amp;quot; &amp;lt;&amp;lt; &amp;quot;n = &amp;quot; &amp;lt;&amp;lt; n &amp;lt;&amp;lt; endl;
+		cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl;
+		helper(vec, s + &amp;quot;(&amp;quot;, p + 1, q, n);
+	}
+	if (q &amp;lt; p) {
+		cout &amp;lt;&amp;lt; &amp;quot;q = &amp;quot; &amp;lt;&amp;lt; q &amp;lt;&amp;lt; &amp;quot; &amp;lt; &amp;quot; &amp;lt;&amp;lt; &amp;quot;p = &amp;quot; &amp;lt;&amp;lt; p &amp;lt;&amp;lt; endl;
+		cout &amp;lt;&amp;lt; s &amp;lt;&amp;lt; endl;
+		helper(vec, s + &amp;quot;)&amp;quot;, p, q + 1, n);	
+	}
+}
+
+vector&amp;lt;string&amp;gt; generateParentheses(int n) {
+	vector&amp;lt;string&amp;gt; vectstr;
+	helper(vectstr, &amp;quot;&amp;quot;, 0, 0, n);
+	return vectstr;
+}
+
+void print(vector&amp;lt;string&amp;gt; const &amp;amp;input) {
+	for (int i = 0; i &amp;lt; input.size(); i++) {
+		std::cout &amp;lt;&amp;lt; input.at(i) &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+	}
+	return;
+}
+
+int main () {
+	vector&amp;lt;string&amp;gt; paracombo = generateParentheses(3);
+	print(paracombo);
+	return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-023&#34;&gt;LeetCode 023&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-024&#34;&gt;LeetCode 024&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+using namespace std;
+
+struct ListNode {
+	int val;
+	ListNode *next;
+	ListNode(int x) : val(x), next(NULL) {}
+};
+
+
+ListNode* swapPairs(ListNode* head) {
+	cout &amp;lt;&amp;lt; &amp;quot;Address of head1 is &amp;quot; &amp;lt;&amp;lt; &amp;amp;head &amp;lt;&amp;lt; endl;
+	//Never use this statement
+	//head == NULL ! head-&amp;gt;next == NULL:	
+	if (head == NULL) {
+		return head;
+	}
+	if (head-&amp;gt;next == NULL) {
+		return head;
+	}
+	ListNode* curr1 = head;
+	ListNode* curr2 = curr1-&amp;gt;next;
+	head = curr2;
+	ListNode* temp;
+	while (curr2-&amp;gt;next!=NULL &amp;amp;&amp;amp; curr2-&amp;gt;next-&amp;gt;next!=NULL) {
+		curr1-&amp;gt;next = curr2-&amp;gt;next-&amp;gt;next;
+		temp = curr2-&amp;gt;next;
+		curr2-&amp;gt;next = curr1;
+		curr1 = temp;
+		curr2 = temp-&amp;gt;next;	
+	}
+	if (curr2-&amp;gt;next == NULL) {
+		curr2-&amp;gt;next = curr1;
+		curr1-&amp;gt;next = NULL;
+	}
+	else if (curr2-&amp;gt;next-&amp;gt;next == NULL) {
+		temp = curr2-&amp;gt;next;
+		curr2-&amp;gt;next = curr1;
+		curr1-&amp;gt;next = temp;
+		temp-&amp;gt;next = NULL;
+		
+	}
+	return head;
+}
+
+
+void printList(ListNode* head) {
+	cout &amp;lt;&amp;lt; &amp;quot;Address of head2 is &amp;quot; &amp;lt;&amp;lt; &amp;amp;head &amp;lt;&amp;lt; endl;
+	ListNode* curr = head;	
+	while(curr != NULL) {
+		cout &amp;lt;&amp;lt; curr-&amp;gt;val &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+		curr = curr-&amp;gt;next;
+	}
+	cout &amp;lt;&amp;lt; endl;
+	return;
+
+}
+
+int main() {
+	ListNode* headNode = NULL;
+	cout &amp;lt;&amp;lt; &amp;quot;Address of headNode is &amp;quot; &amp;lt;&amp;lt; &amp;amp;headNode &amp;lt;&amp;lt; endl;
+	headNode = new ListNode(1);
+	//headNode-&amp;gt;next = new ListNode(2);
+	//headNode-&amp;gt;next-&amp;gt;next = new ListNode(3);
+	//headNode-&amp;gt;next-&amp;gt;next-&amp;gt;next = new ListNode(4);
+	printList(headNode);
+	ListNode* swappedList = swapPairs(headNode);
+	//printList(swappedList);
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-025&#34;&gt;LeetCode 025&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+using namespace std;
+
+struct ListNode {
+ 	int val;
+	ListNode *next;
+	ListNode(int x) : val(x), next(NULL) {}
+};
+
+//Read carefully what the question is asking you to do
+ListNode* reverseKGroup(ListNode* head, int k) {
+	if (head == NULL) return head;
+        if (k == 0 | k == 1) return head;
+	//Find size of list
+	ListNode* curr = head;
+	int sz = 0;
+	while(curr != NULL) {
+		curr = curr-&amp;gt;next;
+		sz += 1;
+	}
+	cout &amp;lt;&amp;lt; &amp;quot;Size is &amp;quot; &amp;lt;&amp;lt; sz &amp;lt;&amp;lt; endl;
+	ListNode* curr1 = head;
+	ListNode* curr2 = curr1-&amp;gt;next;
+	ListNode* temphead = head;
+	for (int j=0; j&amp;lt;k-1; j++) {
+		head = head-&amp;gt;next;
+	}
+	ListNode* temp;
+	if (k &amp;gt; sz) k = sz;
+	int n = sz/k;
+	for (int i=0; i&amp;lt;n; i++) {
+		for (int j=0; j&amp;lt;k-1; j++) {
+			temp = curr2-&amp;gt;next;
+			curr2-&amp;gt;next = curr1;
+			curr1 = curr2;
+			curr2 = temp;		
+		}
+		/*Modify this part
+		temphead-&amp;gt;next = curr2;
+		curr1 = curr2;
+		curr2 = curr2-&amp;gt;next;
+		temphead = temphead-&amp;gt;next;
+		*/
+	}
+	cout &amp;lt;&amp;lt; &amp;quot;curr1 is &amp;quot; &amp;lt;&amp;lt; curr1-&amp;gt;val &amp;lt;&amp;lt; endl;	
+	cout &amp;lt;&amp;lt; &amp;quot;curr2 is &amp;quot; &amp;lt;&amp;lt; curr2-&amp;gt;val &amp;lt;&amp;lt; endl;
+	cout &amp;lt;&amp;lt; &amp;quot;temp is &amp;quot; &amp;lt;&amp;lt; temp-&amp;gt;val &amp;lt;&amp;lt; endl;
+	return head;
+}
+
+
+void printList(ListNode* head) {
+	ListNode* curr = head;	
+	while(curr != NULL) {
+		cout &amp;lt;&amp;lt; curr-&amp;gt;val &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+		curr = curr-&amp;gt;next;
+	}
+	cout &amp;lt;&amp;lt; endl;
+	return;
+
+}
+
+int main() {
+	ListNode* headNode = NULL;
+	headNode = new ListNode(1);
+	headNode-&amp;gt;next = new ListNode(2);
+	headNode-&amp;gt;next-&amp;gt;next = new ListNode(3);
+	headNode-&amp;gt;next-&amp;gt;next-&amp;gt;next = new ListNode(4);
+	headNode-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next = new ListNode(5);
+	headNode-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next = new ListNode(6);
+	headNode-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next = new ListNode(7);
+	headNode-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next-&amp;gt;next = new ListNode(8);
+	printList(headNode);
+	int K = 3;
+	ListNode* reversedList = reverseKGroup(headNode, 3);
+	printList(reversedList);
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-035&#34;&gt;LeetCode 035&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;    
+#include &amp;lt;vector&amp;gt;
+
+using namespace std;
+
+int searchInsert(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) {
+	int spano = 0;
+	vector&amp;lt;int&amp;gt;::iterator it;
+	for (it = nums.begin(); it != nums.end(); it++) {
+		if (target &amp;lt;= *it) {
+			break;
+		}
+		spano += 1;
+	}
+	return spano;
+}
+
+int main() {
+	vector&amp;lt;int&amp;gt; array;
+	array.push_back(2);
+	array.push_back(3);
+	array.push_back(3);
+	array.push_back(4);
+	array.push_back(5);
+	array.push_back(6);
+	array.push_back(6);
+	array.push_back(7);
+	int pos = searchInsert(array, 5);
+	cout &amp;lt;&amp;lt; pos &amp;lt;&amp;lt;endl;
+	return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-070&#34;&gt;LeetCode 070&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+//Using Combinations
+/*
+int climbStairs(int n) {
+	if (n == 0) return 0;
+	int ways = 1;
+	int denominator = 1;
+	int nominator = 1;
+	int m = 0;
+	for (int i = 1; i &amp;lt; n/2+1; i++)
+	{
+		m = (i &amp;lt; n-i) ? i : n-i;
+		for (int j = 0; j &amp;lt; m; j++)
+		{
+			denominator *= n-i-j;
+			nominator *= i-j;
+		}
+		ways += denominator/nominator;
+		denominator = 1;
+		nominator = 1;
+	}
+	return ways;
+}
+*/
+
+//Dynamic Programming
+
+int climbStairs(int n)
+{
+	if (n == 0)
+		return 0;
+	if (n == 1)
+		return 1;
+	int step[n+1];
+	step[0] = 1;
+	step[1] = 1;
+	for (int i = 2; i &amp;lt;= n; i++)
+	{
+		step[i] = step[i-1] + step[i-2];
+	}
+	return step[n];
+}
+
+
+//Brute force
+/*
+int climb_stairs(int i, int n)
+{
+	if (i &amp;gt; n)
+	{
+		return 0;
+	}
+	if (i == n)
+	{
+		return 1;
+	}
+	return climb_stairs(i+1, n) + climb_stairs(i+2, n);
+}
+
+int climbStairs(int n)
+{
+	return climb_stairs(0,n);
+}
+*/
+
+
+
+
+int main()
+{
+	cout &amp;lt;&amp;lt; climbStairs(44) &amp;lt;&amp;lt; endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-101&#34;&gt;LeetCode 101&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;queue&amp;gt;
+using namespace std;
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+///Iterative Method
+
+bool isSymmetric(TreeNode* root) 
+{
+	if (root == NULL) return true;
+	
+	queue&amp;lt;TreeNode*&amp;gt; q;
+	
+	q.push(root);
+	q.push(root);
+	
+	while (!q.empty()) {
+		TreeNode* leftNode = q.front();
+		q.pop();
+		TreeNode* rightNode = q.front();
+		q.pop();
+		
+		cout &amp;lt;&amp;lt; leftNode-&amp;gt;val &amp;lt;&amp;lt; &amp;quot; &amp;quot; &amp;lt;&amp;lt; rightNode-&amp;gt;val &amp;lt;&amp;lt;endl;
+		if (leftNode-&amp;gt;val!=rightNode-&amp;gt;val) return false;
+				
+				
+		if (leftNode-&amp;gt;left!=NULL &amp;amp; rightNode-&amp;gt;right!=NULL) 
+		{
+			q.push(leftNode-&amp;gt;left);
+			q.push(rightNode-&amp;gt;right);
+		}
+		
+		else if (leftNode-&amp;gt;left!=NULL | rightNode-&amp;gt;right!=NULL)
+		{
+			return false;
+		}
+		
+		if (rightNode-&amp;gt;left!=NULL &amp;amp; leftNode-&amp;gt;right!=NULL)
+		{
+			q.push(rightNode-&amp;gt;left);
+			q.push(leftNode-&amp;gt;right);
+		}
+
+		else if (rightNode-&amp;gt;left!=NULL | leftNode-&amp;gt;right!=NULL)
+		{
+			return false;
+		}
+	}
+	
+	return true;
+}
+
+int main() {
+	TreeNode* rt = new TreeNode(0);
+	rt-&amp;gt;left = new TreeNode(1);
+	rt-&amp;gt;right = new TreeNode(1);
+	rt-&amp;gt;left-&amp;gt;left = new TreeNode(3);
+	rt-&amp;gt;left-&amp;gt;right = new TreeNode(4);
+	rt-&amp;gt;right-&amp;gt;right = new TreeNode(3);
+	rt-&amp;gt;right-&amp;gt;left = new TreeNode(4);
+		
+	
+	vector&amp;lt;int&amp;gt; numList;
+	bool is = isSymmetric(rt);
+	cout &amp;lt;&amp;lt; &amp;quot;The Tree is symmetric?&amp;quot; &amp;lt;&amp;lt; is &amp;lt;&amp;lt; endl;
+	return 0;
+
+}
+
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-102&#34;&gt;LeetCode 102&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;queue&amp;gt;
+using namespace std;
+
+struct TreeNode {
+	int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+/*
+vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; levelOrder(TreeNode* root) 
+{
+	vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; traversal;
+	queue&amp;lt;TreeNode*&amp;gt; q;
+	vector&amp;lt;int&amp;gt; children;
+	if (root == NULL) return vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;();
+	q.push(root);
+	children.push_back(root-&amp;gt;val);
+	traversal.push_back(children);
+	
+	while (!(q.empty())) 
+	{
+		children = vector&amp;lt;int&amp;gt; ();
+		int sz = q.size();
+		cout &amp;lt;&amp;lt; endl;
+		for (int i=0; i&amp;lt;sz; i++)
+		{
+			TreeNode* currNode = q.front();
+			q.pop();
+			
+			if (currNode-&amp;gt;left != NULL) 
+			{
+				q.push(currNode-&amp;gt;left);
+				children.push_back(currNode-&amp;gt;left-&amp;gt;val);
+			}
+			if (currNode-&amp;gt;right != NULL) 
+			{
+				q.push(currNode-&amp;gt;right);
+				children.push_back(currNode-&amp;gt;right-&amp;gt;val);
+			}
+		} 
+		if (!children.empty())
+        {
+            traversal.push_back(children);
+        }
+	}
+	return traversal;
+}
+*/
+
+void helper(TreeNode* subroot, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; &amp;amp;traversal, int index)
+{
+	if (subroot == NULL) return;
+	if (index &amp;gt; traversal.size()) 
+		traversal.push_back(vector&amp;lt;int&amp;gt;());
+	helper(subroot-&amp;gt;left,traversal,index+1);
+	traversal[index-1].push_back(subroot-&amp;gt;val);
+	helper(subroot-&amp;gt;right,traversal,index+1);
+}
+
+vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; levelOrder(TreeNode* root) 
+{
+	vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; level_order;
+	helper(root,level_order,1);
+	return level_order;
+}
+
+
+int main() {
+	TreeNode* rt = new TreeNode(1);
+	rt-&amp;gt;left = new TreeNode(2);
+	rt-&amp;gt;right = new TreeNode(3);
+	rt-&amp;gt;left-&amp;gt;left = new TreeNode(4);
+	rt-&amp;gt;right-&amp;gt;left = new TreeNode(6);
+	rt-&amp;gt;right-&amp;gt;right = new TreeNode(7);
+
+    vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; TVS = levelOrder(rt);
+	
+	for (int i=0; i&amp;lt;TVS.size(); i++)
+	{
+		for (int j=0; j&amp;lt;TVS[i].size(); j++)
+		{
+			cout &amp;lt;&amp;lt; TVS[i][j] &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+		}
+		cout &amp;lt;&amp;lt; endl;
+	}
+	
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-103&#34;&gt;LeetCode 103&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;stack&amp;gt;
+using namespace std;
+
+struct TreeNode {
+	int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+
+/*Iterative Method
+vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; zigzagLevelOrder(TreeNode* root) 
+{
+	vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; traversal;
+	stack&amp;lt;TreeNode*&amp;gt; s1;
+	stack&amp;lt;TreeNode*&amp;gt; s2;
+	vector&amp;lt;int&amp;gt; children;
+	if (root == NULL) return vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;();
+	s1.push(root);
+	int reverse = 0;
+	while (!(s1.empty() &amp;amp; s2.empty())) 
+	{
+		children = vector&amp;lt;int&amp;gt;();
+		int sz1 = s1.size();
+		int sz2 = s2.size();
+		TreeNode* currNode;
+		if (reverse%2 == 0) {
+			for (int i = 0; i &amp;lt; sz1; i++)
+			{
+				currNode = s1.top();
+				s1.pop();
+				children.push_back(currNode-&amp;gt;val);
+				if (currNode-&amp;gt;left != NULL) 
+				{
+					s2.push(currNode-&amp;gt;left);
+				}
+				if (currNode-&amp;gt;right != NULL) 
+				{
+					s2.push(currNode-&amp;gt;right);
+				}
+			}
+		}
+		else {
+			for (int i = 0; i &amp;lt; sz2; i++)
+			{
+				currNode = s2.top();
+				s2.pop();
+				children.push_back(currNode-&amp;gt;val);
+				if (currNode-&amp;gt;right != NULL)
+				{
+					s1.push(currNode-&amp;gt;right);
+				}
+				if (currNode-&amp;gt;left != NULL)
+				{
+					s1.push(currNode-&amp;gt;left);
+				}
+			}
+		}
+		traversal.push_back(children);
+		reverse += 1;
+	}
+	return traversal;
+}
+*/
+
+void helper(TreeNode* subroot, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; &amp;amp;traversal, int index)
+{
+	if (subroot == NULL) return;
+	if (index &amp;gt; traversal.size()) 
+		traversal.push_back(vector&amp;lt;int&amp;gt;());
+	helper(subroot-&amp;gt;left,traversal,index+1);
+	if (index%2 == 1)
+		traversal[index-1].push_back(subroot-&amp;gt;val);
+	else
+		traversal[index-1].insert(traversal[index-1].begin(),subroot-&amp;gt;val);
+	helper(subroot-&amp;gt;right,traversal,index+1);
+}
+
+vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; zigzagLevelOrder(TreeNode* root) 
+{
+	vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; level_order;
+	helper(root,level_order,1);
+	return level_order;
+}
+
+int main() {
+	TreeNode* rt = new TreeNode(1);
+	rt-&amp;gt;left = new TreeNode(2);
+	rt-&amp;gt;right = new TreeNode(3);
+	rt-&amp;gt;left-&amp;gt;left = new TreeNode(4);
+	rt-&amp;gt;right-&amp;gt;left = new TreeNode(6);
+	rt-&amp;gt;right-&amp;gt;right = new TreeNode(7);
+
+    vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; TVS = zigzagLevelOrder(rt);
+	
+	for (int i=0; i&amp;lt;TVS.size(); i++)
+	{
+		for (int j=0; j&amp;lt;TVS[i].size(); j++)
+		{
+			cout &amp;lt;&amp;lt; TVS[i][j] &amp;lt;&amp;lt; &amp;quot; &amp;quot;;
+		}
+		cout &amp;lt;&amp;lt; endl;
+	}
+	
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-104&#34;&gt;LeetCode 104&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;queue&amp;gt;
+using namespace std;
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+ 
+/*Recursive Method
+int maxDepth(TreeNode* root) 
+{
+	if (root == NULL) return 0;
+	return 1+max(maxDepth(root-&amp;gt;left), maxDepth(root-&amp;gt;right));
+}
+*/
+
+//Iterative Method
+int maxDepth(TreeNode* root)
+{
+	queue&amp;lt;TreeNode*&amp;gt; q;
+	int layers = 0;
+	if (root == NULL) return 0;
+	q.push(root);
+	
+	while (!(q.empty())) 
+	{
+		int sz = q.size();
+		for (int i=0; i&amp;lt;sz; i++)
+		{
+			TreeNode* currNode = q.front();
+			q.pop();
+			
+			if (currNode-&amp;gt;left != NULL) 
+			{
+				q.push(currNode-&amp;gt;left);
+			}
+			if (currNode-&amp;gt;right != NULL) 
+			{
+				q.push(currNode-&amp;gt;right);
+			}
+		}
+		layers++;
+	}
+	return layers;
+}
+int main() 
+{
+	TreeNode* root = new TreeNode(3);
+	root-&amp;gt;left = new TreeNode(9);
+	root-&amp;gt;right = new TreeNode(20);
+	root-&amp;gt;right-&amp;gt;left = new TreeNode(15);
+	root-&amp;gt;right-&amp;gt;right = new TreeNode(7);
+
+	
+	cout &amp;lt;&amp;lt; maxDepth(root) &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-105&#34;&gt;LeetCode 105&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;queue&amp;gt;
+using namespace std;
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+
+
+
+TreeNode* buildTree(vector&amp;lt;int&amp;gt;&amp;amp; preorder, vector&amp;lt;int&amp;gt;&amp;amp; inorder) {
+	if (preorder.empty())
+	{
+		return NULL;
+	}
+	int start = 0;
+	int end = preorder.size();
+	TreeNode* root = helper(preorder, inorder, start, end);
+}
+
+TreeNode* helper(vector&amp;lt;int&amp;gt;&amp;amp; preorder, vector&amp;lt;int&amp;gt;&amp;amp; inorder, int inStart int inEnd)
+{
+	static int inPre = 0;	
+	int index = search(inorder, preorder[inPre]);
+	inPre++;
+	
+	
+	
+	subroot-&amp;gt;left = helper(preorder, inorder, inStart, index-1);
+	subroot-&amp;gt;right = helper(preorder, inorder, index+1, inEnd);
+	
+}
+
+
+
+int main()
+{
+    int in[] = {1,2,3,489866,5};  
+    char pre[] = { &#39;A&#39;, &#39;B&#39;, &#39;D&#39;, &#39;E&#39;, &#39;C&#39;, &#39;F&#39; };  
+    int len = sizeof(in);  
+	cout &amp;lt;&amp;lt; len &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;leetcode-965&#34;&gt;LeetCode 965&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+
+using namespace std;
+
+struct TreeNode {
+      int val;
+      TreeNode *left;
+      TreeNode *right;
+      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+//Usually helper functions are void function. 
+void helper(TreeNode* subroot, int value, bool&amp;amp; judge) {
+	if (subroot == NULL) return;
+	if (subroot-&amp;gt;val != value) judge = false;
+	helper(subroot-&amp;gt;left, value, judge);
+	helper(subroot-&amp;gt;right, value, judge);
+}
+ 
+bool isUnivalTree(TreeNode* root) {
+	if (root == NULL) return true;
+    int value = root-&amp;gt;val;
+	bool isUT = true;
+	helper(root, value , isUT);
+	return isUT;
+}
+
+
+int main() {
+	TreeNode* first = new TreeNode(2);
+	TreeNode* second = new TreeNode(3);
+	TreeNode* third = new TreeNode(2);
+	TreeNode* fourth = new TreeNode(2);
+	TreeNode* fifth = new TreeNode(2);
+	TreeNode* null = NULL;
+	first-&amp;gt;left = second;
+	first-&amp;gt;right = third;
+	second-&amp;gt;left = fourth;
+	second-&amp;gt;right = fifth;
+	cout &amp;lt;&amp;lt; isUnivalTree(null) &amp;lt;&amp;lt; endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h3&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

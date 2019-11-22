@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KDTree, Data Structure | Jiashuo Tong</title>
+    <link>https://diditong.github.io/tags/kdtree-data-structure/</link>
+      <atom:link href="https://diditong.github.io/tags/kdtree-data-structure/index.xml" rel="self" type="application/rss+xml" />
+    <description>KDTree, Data Structure</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 15 Nov 2019 00:22:21 +0000</lastBuildDate>
+    <image>
+      <url>https://diditong.github.io/img/icon-192.png</url>
+      <title>KDTree, Data Structure</title>
+      <link>https://diditong.github.io/tags/kdtree-data-structure/</link>
+    </image>
+    
+    <item>
+      <title>Photo Mosaic</title>
+      <link>https://diditong.github.io/project/photo-mosaic/</link>
+      <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
+      <guid>https://diditong.github.io/project/photo-mosaic/</guid>
+      <description>&lt;p&gt;ssss&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

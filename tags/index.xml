@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags | Jiashuo Tong</title>
+    <link>https://diditong.github.io/tags/</link>
+      <atom:link href="https://diditong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 15 Nov 2019 00:22:21 +0000</lastBuildDate>
+    <image>
+      <url>https://diditong.github.io/img/icon-192.png</url>
+      <title>Tags</title>
+      <link>https://diditong.github.io/tags/</link>
+    </image>
+    
+    <item>
+      <title>Finite Element Method, Deep Learning</title>
+      <link>https://diditong.github.io/tags/finite-element-method-deep-learning/</link>
+      <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
+      <guid>https://diditong.github.io/tags/finite-element-method-deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GAN, Deep Learning</title>
+      <link>https://diditong.github.io/tags/gan-deep-learning/</link>
+      <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
+      <guid>https://diditong.github.io/tags/gan-deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KDTree, Data Structure</title>
+      <link>https://diditong.github.io/tags/kdtree-data-structure/</link>
+      <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
+      <guid>https://diditong.github.io/tags/kdtree-data-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Source Themes</title>
+      <link>https://diditong.github.io/tags/source-themes/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://diditong.github.io/tags/source-themes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
