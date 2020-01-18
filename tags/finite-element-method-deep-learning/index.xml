@@ -13,11 +13,37 @@
     </image>
     
     <item>
-      <title>FEM And Deep Learning For Solving PDE&#39;s</title>
+      <title>Deep Learning For Solving PDE&#39;s</title>
       <link>https://diditong.github.io/project/fem-and-deep-learning/</link>
       <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
       <guid>https://diditong.github.io/project/fem-and-deep-learning/</guid>
-      <description>&lt;p&gt;ssss &lt;code&gt;content/project/FEM And Deep Learning/f2.png&lt;/code&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Partial differential equations (PDEs) are equations that contains unknown multivariable functions and their partial derivatives. PDEs can be used to describe a wide variety of phenomena such as heat, diffusion,fluid dynamics, quantum mechanics, etc.&lt;/p&gt;
+
+&lt;p&gt;Traditional methods for solving PDEs include Finite Element Methods (FEM), Finite Difference Methods (FDM) and Finite Volume Methods (FVM). In recent years, researchers start to develop deep neural networks (DNNs), also known as deep learning, for solving PDEs.&lt;/p&gt;
+
+&lt;p&gt;Using DNNs achieves better flexibility than traditional computational methods. A DNN model only needs to be trained once to repeatedly generate precise solutions for a whole family of PDEs. Besides, it often consumes less computational power.&lt;/p&gt;
+
+&lt;p&gt;My graduate research focuses on developing DNNs for solving the Navier-Stokes equations, which describe the dynamics of viscous fluid.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Smart Water pH Control</title>
+      <link>https://diditong.github.io/project/smart-water-ph-control/</link>
+      <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
+      <guid>https://diditong.github.io/project/smart-water-ph-control/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Project Purpose&lt;/strong&gt; &lt;br/&gt;
+This is a senior engineering design project that I have done with my teammates at MechSE of UIUC in Spring 2018.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Project Objective&lt;/strong&gt; &lt;br/&gt;
+To create a prototype that demonstrates automatic control of the pH of water while maintaining a continuous flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Project Deliverables&lt;/strong&gt; &lt;br/&gt;
+1.  A physical system including electronics, container, pumps, chemicals for pH adjusting, etc. &lt;br/&gt;
+2.  Software for water pH control and software for water flow rate control. &lt;br/&gt;
+3.  A convenient Graphic User Interface. &lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;For further information about the control and GUI implementation, please find the code &lt;a href=&#34;https://github.com/diditong&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

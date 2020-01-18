@@ -13,29 +13,65 @@
     </image>
     
     <item>
-      <title>FEM And Deep Learning For Solving PDE&#39;s</title>
+      <title>Deep Learning For Solving PDE&#39;s</title>
       <link>https://diditong.github.io/project/fem-and-deep-learning/</link>
       <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
       <guid>https://diditong.github.io/project/fem-and-deep-learning/</guid>
-      <description>&lt;p&gt;ssss &lt;code&gt;content/project/FEM And Deep Learning/f2.png&lt;/code&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Partial differential equations (PDEs) are equations that contains unknown multivariable functions and their partial derivatives. PDEs can be used to describe a wide variety of phenomena such as heat, diffusion,fluid dynamics, quantum mechanics, etc.&lt;/p&gt;
+
+&lt;p&gt;Traditional methods for solving PDEs include Finite Element Methods (FEM), Finite Difference Methods (FDM) and Finite Volume Methods (FVM). In recent years, researchers start to develop deep neural networks (DNNs), also known as deep learning, for solving PDEs.&lt;/p&gt;
+
+&lt;p&gt;Using DNNs achieves better flexibility than traditional computational methods. A DNN model only needs to be trained once to repeatedly generate precise solutions for a whole family of PDEs. Besides, it often consumes less computational power.&lt;/p&gt;
+
+&lt;p&gt;My graduate research focuses on developing DNNs for solving the Navier-Stokes equations, which describe the dynamics of viscous fluid.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>GAN For Style Transfer</title>
-      <link>https://diditong.github.io/project/gan-for-style-transfer/</link>
+      <title>Image to image translation using cycle GANs</title>
+      <link>https://diditong.github.io/project/cyclegan-for-style-transfer/</link>
       <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
-      <guid>https://diditong.github.io/project/gan-for-style-transfer/</guid>
-      <description>&lt;p&gt;ssss&lt;/p&gt;
+      <guid>https://diditong.github.io/project/cyclegan-for-style-transfer/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Project Purpose&lt;/strong&gt; &lt;br/&gt;
+This is the final project for CS 547: Deep Learning offered by
+University of Illinois Urbana-Champaign in Fall 2019. The goal is to implement
+a Cycle-consistent Generative Adversarial Network (CycleGAN) model from scratch
+for image-to-image translation problems based on the paper [1].&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Project Deliverables&lt;/strong&gt; &lt;br/&gt;
+Code for the following functions are written:
+1. The discriminator &amp;amp; generator functions for CycleGAN
+2. An object-oriented network structure of CycleGAN
+3. The loss function
+4. The training function&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Results&lt;/strong&gt; &lt;br/&gt;
+The cover picture is the composition of a photo of my hometown in the style of Vincent
+van Gogh&amp;rsquo;s paintings. Similar results are obtained from trainings on other datasets.&lt;/p&gt;
+
+&lt;p&gt;[1] Zhu, Jun-Yan, Taesung Park, Phillip Isola, and Alexei A. Efros. &amp;ldquo;Unpaired image-to-image
+translation using cycle-consistent adversarial networks.&amp;rdquo; In Proceedings of the IEEE international
+conference on computer vision, pp. 2223-2232. 2017.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Photo Mosaic</title>
-      <link>https://diditong.github.io/project/photo-mosaic/</link>
+      <title>Smart Water pH Control</title>
+      <link>https://diditong.github.io/project/smart-water-ph-control/</link>
       <pubDate>Fri, 15 Nov 2019 00:22:21 +0000</pubDate>
-      <guid>https://diditong.github.io/project/photo-mosaic/</guid>
-      <description>&lt;p&gt;ssss&lt;/p&gt;
+      <guid>https://diditong.github.io/project/smart-water-ph-control/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Project Purpose&lt;/strong&gt; &lt;br/&gt;
+This is a senior engineering design project that I have done with my teammates at MechSE of UIUC in Spring 2018.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Project Objective&lt;/strong&gt; &lt;br/&gt;
+To create a prototype that demonstrates automatic control of the pH of water while maintaining a continuous flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Project Deliverables&lt;/strong&gt; &lt;br/&gt;
+1.  A physical system including electronics, container, pumps, chemicals for pH adjusting, etc. &lt;br/&gt;
+2.  Software for water pH control and software for water flow rate control. &lt;br/&gt;
+3.  A convenient Graphic User Interface. &lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;For further information about the control and GUI implementation, please find the code &lt;a href=&#34;https://github.com/diditong&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

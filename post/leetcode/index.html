@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="This is a documentation for LeetCodes LeetCode 009 #include &lt;iostream&gt; using namespace std; /*Revert the whole number //Problematic for very large number bool isPalindrome(int x) { if (x &lt; 0) return false; int x1 = x; int x2 = 0; int lastdig = 0; while (x != 0) { lastdig = x%10; x = x/10; x2 = x2*10&#43;lastdig; } if (x1 == x2) return true; else return false; } */ //Revert half of the number bool isPalindrome(int x) { if (x &lt; 0) return false; //special case: x = 0 or x = 10; if (x &gt; 0 &amp;&amp; x%10 == 0) return false; int x1 = x; int x2 = 0; while (x1 &gt; x2) { x2 = x2*10 &#43; x1%10; x1 = x1/10; } if (x1 == x2) return true; if (x2/10 == x1) return true; return false; } int main() { cout &lt;&lt; isPalindrome(123321) &lt;&lt; endl;	return 0; }  LeetCode 011 #include &lt;iostream&gt; #include &lt;vector&gt; using namespace std; /* int calculateArea(int h1, int h2, dis) { int h = min(h1,h2); int area = h*dis; return area; } */	int maxArea(vector&lt;int&gt;&amp; height) { int len = height.">
+  <meta name="description" content="Please visit my LeetCode website.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://diditong.github.io/post/leetcode/">
@@ -103,21 +103,20 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Jiashuo Tong">
   <meta property="og:url" content="https://diditong.github.io/post/leetcode/">
-  <meta property="og:title" content="Jiashuo&#39;s LeetCode Exercise | Jiashuo Tong">
-  <meta property="og:description" content="This is a documentation for LeetCodes LeetCode 009 #include &lt;iostream&gt; using namespace std; /*Revert the whole number //Problematic for very large number bool isPalindrome(int x) { if (x &lt; 0) return false; int x1 = x; int x2 = 0; int lastdig = 0; while (x != 0) { lastdig = x%10; x = x/10; x2 = x2*10&#43;lastdig; } if (x1 == x2) return true; else return false; } */ //Revert half of the number bool isPalindrome(int x) { if (x &lt; 0) return false; //special case: x = 0 or x = 10; if (x &gt; 0 &amp;&amp; x%10 == 0) return false; int x1 = x; int x2 = 0; while (x1 &gt; x2) { x2 = x2*10 &#43; x1%10; x1 = x1/10; } if (x1 == x2) return true; if (x2/10 == x1) return true; return false; } int main() { cout &lt;&lt; isPalindrome(123321) &lt;&lt; endl;	return 0; }  LeetCode 011 #include &lt;iostream&gt; #include &lt;vector&gt; using namespace std; /* int calculateArea(int h1, int h2, dis) { int h = min(h1,h2); int area = h*dis; return area; } */	int maxArea(vector&lt;int&gt;&amp; height) { int len = height."><meta property="og:image" content="https://diditong.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://diditong.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:title" content="Data Structure &amp; Algorithms Exercise | Jiashuo Tong">
+  <meta property="og:description" content="Please visit my LeetCode website."><meta property="og:image" content="https://diditong.github.io/post/leetcode/featured.png">
+  <meta property="twitter:image" content="https://diditong.github.io/post/leetcode/featured.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2019-08-15T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2016-04-20T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2019-08-15T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2019-04-17T00:00:00&#43;00:00">
   
 
   
@@ -129,7 +128,7 @@
 
 
 
-  <title>Jiashuo&#39;s LeetCode Exercise | Jiashuo Tong</title>
+  <title>Data Structure &amp; Algorithms Exercise | Jiashuo Tong</title>
 
 </head>
 
@@ -376,26 +375,44 @@
 
 
 
-  
+
+
+
+
+
+
+
 
   
   
-  
+
+
 <div class="article-container pt-3">
-  <h1 itemprop="name">Jiashuo&#39;s LeetCode Exercise</h1>
+  <h1 itemprop="name">Data Structure &amp; Algorithms Exercise</h1>
 
   
 
   
+
+
+
+<meta content="2016-04-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-04-17 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
     
 
 
 
-<meta content="2019-08-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2019-08-15 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Jiashuo Tong</a></span>
 
-<div class="article-metadata">
-
+  </div>
   
   
 
@@ -404,8 +421,10 @@
     
     
       
+          Last updated on
+      
     
-    <time>Aug 15, 2019</time>
+    <time>Apr 17, 2019</time>
   </span>
   
 
@@ -414,7 +433,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    15 min read
+    1 min read
   </span>
   
 
@@ -423,6 +442,10 @@
   
 
   
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/demo/">Demo</a></span>
   
 
   
@@ -438,7 +461,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://diditong.github.io/post/leetcode/&amp;text=Jiashuo&amp;#39;s%20LeetCode%20Exercise" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://diditong.github.io/post/leetcode/&amp;text=Data%20Structure%20&amp;amp;%20Algorithms%20Exercise" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -451,7 +474,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://diditong.github.io/post/leetcode/&amp;t=Jiashuo&amp;#39;s%20LeetCode%20Exercise" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://diditong.github.io/post/leetcode/&amp;t=Data%20Structure%20&amp;amp;%20Algorithms%20Exercise" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -464,7 +487,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Jiashuo&amp;#39;s%20LeetCode%20Exercise&amp;body=https://diditong.github.io/post/leetcode/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Data%20Structure%20&amp;amp;%20Algorithms%20Exercise&amp;body=https://diditong.github.io/post/leetcode/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -477,7 +500,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://diditong.github.io/post/leetcode/&amp;title=Jiashuo&amp;#39;s%20LeetCode%20Exercise" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://diditong.github.io/post/leetcode/&amp;title=Data%20Structure%20&amp;amp;%20Algorithms%20Exercise" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -490,7 +513,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Jiashuo&amp;#39;s%20LeetCode%20Exercise%20https://diditong.github.io/post/leetcode/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Data%20Structure%20&amp;amp;%20Algorithms%20Exercise%20https://diditong.github.io/post/leetcode/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -503,7 +526,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://diditong.github.io/post/leetcode/&amp;title=Jiashuo&amp;#39;s%20LeetCode%20Exercise" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://diditong.github.io/post/leetcode/&amp;title=Data%20Structure%20&amp;amp;%20Algorithms%20Exercise" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -516,22 +539,29 @@
 
 </div>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 192px; max-height: 192px;">
+  <div style="position: relative">
+    <img src="/post/leetcode/featured.png" alt="" class="featured-image">
+    
+  </div>
 </div>
 
 
@@ -539,1136 +569,7 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      <h3 id="this-is-a-documentation-for-leetcodes">This is a documentation for LeetCodes</h3>
-
-<h2 id="leetcode-009">LeetCode 009</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-
-using namespace std;
-/*Revert the whole number
-//Problematic for very large number
-bool isPalindrome(int x) {
-        if (x &lt; 0) return false;
-	int x1 = x;
-	int x2 = 0;
-	int lastdig = 0;
-	while (x != 0) {
-		lastdig = x%10;
-		x = x/10;
-		x2 = x2*10+lastdig; 
-	}
-	if (x1 == x2) return true;
-	else return false;
-}
-*/
-
-//Revert half of the number
-bool isPalindrome(int x) {
-	if (x &lt; 0) return false;
-	//special case: x = 0 or x = 10;
-	if (x &gt; 0 &amp;&amp; x%10 == 0) return false;
-	int x1 = x;
-	int x2 = 0;
-	while (x1 &gt; x2) {
-	    x2 = x2*10 + x1%10;
-	    x1 = x1/10;
-	}
-	if (x1 == x2) return true;
-	if (x2/10 == x1) return true;
-	return false;
-}
-
-
-int main() {
-	cout &lt;&lt; isPalindrome(123321) &lt;&lt; endl;	
-	return 0;
-}
-</code></pre>
-
-<h2 id="leetcode-011">LeetCode 011</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-
-using namespace std;
-/*
-int calculateArea(int h1, int h2, dis) {
-	int h = min(h1,h2);
-	int area = h*dis;
-	return area;
-}
-*/	
-
-int maxArea(vector&lt;int&gt;&amp; height) {
-	int len = height.size();
-	int l = 0;
-	int r = len-1;
-	int area = 0;
-	while (l &lt; r)
-	{
-		area = max(area, min(height[l],height[r])*(r-l));
-		if (height[l]&lt;height[r])
-		{
-			l++;
-		}
-		else 
-		{
-			r--;
-		}
-	}
-	return area;
-}
-
-int main(){
-	vector&lt;int&gt; sides;
-	sides.push_back(1);
-	sides.push_back(8);
-	sides.push_back(6);
-	sides.push_back(2);
-	sides.push_back(5);
-	sides.push_back(4);
-	sides.push_back(8);
-	sides.push_back(3);
-	sides.push_back(7);
-	int Amax = maxArea(sides);
-	cout &lt;&lt; Amax &lt;&lt; endl;
-	return 0;
-}
-</code></pre>
-
-<h2 id="leetcode-017">LeetCode 017</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-
-using namespace std;
-
-void helper(vector&lt;string&gt; &amp;vec, string str, int nos) {
-	if (nos == 0) {
-		vec.push_back(str);
-		return;
-	}
-	//Update last digit and remaining number
-	int lastdig = nos % 10;
-	nos = nos/10;
-	//Map the last digit to ASCII values
-	//Number 7, 8 and 9 are special cases
-	if (lastdig == 7) {
-		helper(vec, char(112) + str, nos);
-		helper(vec, char(113) + str, nos);
-		helper(vec, char(114) + str, nos);
-		helper(vec, char(115) + str, nos);
-	}
-	else if (lastdig == 8) {
-		helper(vec, char(116) + str, nos);
-		helper(vec, char(117) + str, nos);
-		helper(vec, char(118) + str, nos);
-	}
-	else if (lastdig == 9) {
-		helper(vec, char(119) + str, nos);
-		helper(vec, char(120) + str, nos);
-		helper(vec, char(121) + str, nos);
-		helper(vec, char(122) + str, nos);
-	}
-	else {
-		int ascii1 = 3*lastdig+91;
-		int ascii2 = 3*lastdig+92;
-		int ascii3 = 3*lastdig+93;
-		//Convert the ASCII values to characters
-		//Run the recursion function helper until the condition nos = 0 is met
-		helper(vec, char(ascii1) + str, nos);
-		helper(vec, char(ascii2) + str, nos);
-		helper(vec, char(ascii3) + str, nos);
-	}
-}
-
-//Encounted error (solved): terminate called after throwing an instance of 'std::invalid_argument'
-//what():  stoi
-//Never forget to consider trivial cases
-vector&lt;string&gt; letterCombinations(string digits) {
-	vector&lt;string&gt; combos;
-	if (digits == &quot;&quot;) {}
-	else {
-		int numbers = std::stoi(digits);
-		helper(combos, &quot;&quot;, numbers);
-	}
-	return combos;
-}
-
-int main() {
-	vector&lt;string&gt; letcoms = letterCombinations(&quot;&quot;);
-	for (vector&lt;string&gt;::iterator it = letcoms.begin(); it != letcoms.end(); ++it) {
-		cout &lt;&lt; *it&lt;&lt; &quot; &quot;;
-	}
-	cout &lt;&lt; &quot;\n&quot;;
-	return 0;
-}
-
-</code></pre>
-
-<h2 id="leetcode-021">LeetCode 021</h2>
-
-<pre><code class="language-c++">// Header file for input output functions 
-#include&lt;iostream&gt;  
-
-using namespace std; 
-
- // Definition for singly-linked list.
-/*
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
-*/
-
-#include &quot;ListNode.h&quot;
-
-
-ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-    ListNode* c1 = l1;
-    ListNode* c2 = l2;
-    ListNode* curr = NULL;
-    ListNode* Merged = NULL;
-    
-    if (l1 == NULL &amp;&amp; l2 == NULL) {return NULL;}
-    if (l1 == NULL &amp;&amp; l2 != NULL) {return l2;}
-    if (l1 != NULL &amp;&amp; l2 == NULL) {return l1;}
-    if (l1-&gt;val &lt;= l2-&gt;val) {
-        Merged = new ListNode(l1-&gt;val);
-        curr = Merged;
-        c1 = c1-&gt;next;
-    }
-    else {
-        Merged = new ListNode(l2-&gt;val);
-        curr = Merged;
-        c2 = c2-&gt;next;
-    }
-    while (c1 != NULL &amp;&amp; c2 != NULL) {
-        cout &lt;&lt; &quot;Reached Here1&quot; &lt;&lt; endl;
-
-        if (c1-&gt;val &lt;= c2-&gt;val){
-            cout &lt;&lt; &quot;Reached Here2&quot; &lt;&lt; endl;
- 	    ListNode* NewNode = new ListNode(c1-&gt;val);
-	    curr-&gt;next = NewNode;
-            c1 = c1-&gt;next;            
-        }
-        else {
-	    curr-&gt;next = new ListNode(c2-&gt;val);
-            c2 = c2-&gt;next; 
- 	}
-        curr = curr-&gt;next;
-    }
-    if (c1 == NULL) {
-        while (c2 != NULL){
-            curr-&gt;next = new ListNode(c2-&gt;val);
-            c2 = c2-&gt;next;
-            curr = curr-&gt;next;
-        }
-    }
-    else if (c2 == NULL) {
-        while (c1 != NULL){
-            curr-&gt;next = new ListNode(c1-&gt;val);
-            c1 = c1-&gt;next;
-            curr = curr-&gt;next;
-        }
-    }
-    return Merged;
-}
-
-
-ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-	ListNode* h1 = l1;
-	ListNode* h2 = l2;
-	ListNode* h1t = NULL;
-	ListNode* h2t = NULL;
-	ListNode* head;
-	int smaller;
-	if (h1 == NULL)
-	{
-		return h2;
-	}
-	if (h2 == NULL)
-	{
-		return h1;
-	}
-	if (h2-&gt;val &lt; h1-&gt;val)
-	{
-		head = h2;
-		h2t = h2;
-		h2 = h2-&gt;next;
-		h2t-&gt;next = h1;
-		smaller = 1;
-	}
-	else
-	{
-		head = h1;
-		h1t = h1;
-		h1 = h1-&gt;next;
-		h1t-&gt;next = h2;
-		smaller = 0;
-	}
-	while (h1!=NULL and h2!=NULL)
-	{
-		if (smaller == 1)
-		{
-			if (h2-&gt;val &lt; h1-&gt;val)
-			{
-				h2t-&gt;next = h2;
-				h2t = h2;
-				h2 = h2-&gt;next;
-				h2t-&gt;next = h1;
-			}
-			else
-			{
-				h1t = h1;
-				h1 = h1-&gt;next;
-				h1t-&gt;next = h2;
-				smaller = 0;
-			}
-		}
-		else
-		{
-			if (h1-&gt;val &lt; h2-&gt;val) 
-			{
-				h1t-&gt;next = h1;
-				h1t = h1;
-				h1 = h1-&gt;next;
-				h1t-&gt;next = h2;
-			}
-			else
-			{
-				h2t = h2;
-				h2 = h2-&gt;next;
-				h2t-&gt;next = h1;
-				smaller = 1;
-			}
-		}
-	}
-	return head;
-}
-
-// main function -0 
-// where the execution of program begins 
-int main() 
-{ 
-    //Build two lists, l1 and l2
-    ListNode* l1 = new ListNode(1);
-    ListNode* second1 = new ListNode(2);
-    ListNode* third1 = new ListNode(4);
-    l1-&gt;next = second1;
-    second1-&gt;next = third1;
-
-    ListNode* l2 = new ListNode(1);
-    ListNode* second2 = new ListNode(3);
-    ListNode* third2 = new ListNode(4);
-    l2-&gt;next = second2;
-    second2-&gt;next = third2;
-    
-    ListNode* MergedList = mergeTwoLists(l1,l2);
-    for (ListNode* i = MergedList; i != NULL;) {
-        cout &lt;&lt; i-&gt;val &lt;&lt; endl;
-        i = i-&gt;next;
-    }
-    return 0;
-} 
-</code></pre>
-
-<h2 id="leetcode-022">LeetCode 022</h2>
-
-<pre><code class="language-c++">// Simple C++ program to display &quot;Hello World&quot; 
-  
-// Header file for input output functions 
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-using namespace std; 
-
-//NOTE: Must use ALIASING here.
-void helper (vector&lt;string&gt; &amp;vec, string s, int p, int q, int n) {
-	if (q == n) {
-		vec.push_back(s);
-		cout &lt;&lt; &quot;Pushed string is &quot; &lt;&lt; s &lt;&lt; endl;
-		cout &lt;&lt; &quot;Vector address is &quot; &lt;&lt; &amp;vec &lt;&lt; endl;
-		cout &lt;&lt; &quot;Vector size is &quot; &lt;&lt; vec.size() &lt;&lt; endl;
-		return;
-	}
-	
-	/*WRONG_METHOD: 
-	if (p == q &amp;&amp; p &lt; n) {
-		cout &lt;&lt; &quot;IF1: &quot; &lt;&lt; &quot;p = &quot; &lt;&lt; p &lt;&lt; &quot;, q = &quot; &lt;&lt; q &lt;&lt; endl;
-		helper(vec, s + &quot;(&quot;, p + 1, q, n);
-	}
-	else if (p == q &amp;&amp; p == n) {
-		cout &lt;&lt; &quot;IF2: &quot; &lt;&lt; &quot;p = &quot; &lt;&lt; p &lt;&lt; &quot;, q = &quot; &lt;&lt; q &lt;&lt; endl;
-		helper(vec, s + &quot;)&quot;, p, q + 1, n);	
-	}
-	else {
-		cout &lt;&lt; &quot;IF3: &quot; &lt;&lt; &quot;p = &quot; &lt;&lt; p &lt;&lt; &quot;, q = &quot; &lt;&lt; q &lt;&lt; endl;
-		helper(vec, s + &quot;(&quot;, p + 1, q, n);
-		helper(vec, s + &quot;)&quot;, p, q + 1, n);
-	}
-	*/
-	
-	if (p &lt; n) {
-		cout &lt;&lt; &quot;p = &quot; &lt;&lt; p &lt;&lt; &quot; &lt; &quot; &lt;&lt; &quot;n = &quot; &lt;&lt; n &lt;&lt; endl;
-		cout &lt;&lt; s &lt;&lt; endl;
-		helper(vec, s + &quot;(&quot;, p + 1, q, n);
-	}
-	if (q &lt; p) {
-		cout &lt;&lt; &quot;q = &quot; &lt;&lt; q &lt;&lt; &quot; &lt; &quot; &lt;&lt; &quot;p = &quot; &lt;&lt; p &lt;&lt; endl;
-		cout &lt;&lt; s &lt;&lt; endl;
-		helper(vec, s + &quot;)&quot;, p, q + 1, n);	
-	}
-}
-
-vector&lt;string&gt; generateParentheses(int n) {
-	vector&lt;string&gt; vectstr;
-	helper(vectstr, &quot;&quot;, 0, 0, n);
-	return vectstr;
-}
-
-void print(vector&lt;string&gt; const &amp;input) {
-	for (int i = 0; i &lt; input.size(); i++) {
-		std::cout &lt;&lt; input.at(i) &lt;&lt; &quot; &quot;;
-	}
-	return;
-}
-
-int main () {
-	vector&lt;string&gt; paracombo = generateParentheses(3);
-	print(paracombo);
-	return 0;
-}
-
-</code></pre>
-
-<h2 id="leetcode-023">LeetCode 023</h2>
-
-<pre><code class="language-c++">
-</code></pre>
-
-<h2 id="leetcode-024">LeetCode 024</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-using namespace std;
-
-struct ListNode {
-	int val;
-	ListNode *next;
-	ListNode(int x) : val(x), next(NULL) {}
-};
-
-
-ListNode* swapPairs(ListNode* head) {
-	cout &lt;&lt; &quot;Address of head1 is &quot; &lt;&lt; &amp;head &lt;&lt; endl;
-	//Never use this statement
-	//head == NULL ! head-&gt;next == NULL:	
-	if (head == NULL) {
-		return head;
-	}
-	if (head-&gt;next == NULL) {
-		return head;
-	}
-	ListNode* curr1 = head;
-	ListNode* curr2 = curr1-&gt;next;
-	head = curr2;
-	ListNode* temp;
-	while (curr2-&gt;next!=NULL &amp;&amp; curr2-&gt;next-&gt;next!=NULL) {
-		curr1-&gt;next = curr2-&gt;next-&gt;next;
-		temp = curr2-&gt;next;
-		curr2-&gt;next = curr1;
-		curr1 = temp;
-		curr2 = temp-&gt;next;	
-	}
-	if (curr2-&gt;next == NULL) {
-		curr2-&gt;next = curr1;
-		curr1-&gt;next = NULL;
-	}
-	else if (curr2-&gt;next-&gt;next == NULL) {
-		temp = curr2-&gt;next;
-		curr2-&gt;next = curr1;
-		curr1-&gt;next = temp;
-		temp-&gt;next = NULL;
-		
-	}
-	return head;
-}
-
-
-void printList(ListNode* head) {
-	cout &lt;&lt; &quot;Address of head2 is &quot; &lt;&lt; &amp;head &lt;&lt; endl;
-	ListNode* curr = head;	
-	while(curr != NULL) {
-		cout &lt;&lt; curr-&gt;val &lt;&lt; &quot; &quot;;
-		curr = curr-&gt;next;
-	}
-	cout &lt;&lt; endl;
-	return;
-
-}
-
-int main() {
-	ListNode* headNode = NULL;
-	cout &lt;&lt; &quot;Address of headNode is &quot; &lt;&lt; &amp;headNode &lt;&lt; endl;
-	headNode = new ListNode(1);
-	//headNode-&gt;next = new ListNode(2);
-	//headNode-&gt;next-&gt;next = new ListNode(3);
-	//headNode-&gt;next-&gt;next-&gt;next = new ListNode(4);
-	printList(headNode);
-	ListNode* swappedList = swapPairs(headNode);
-	//printList(swappedList);
-}
-
-</code></pre>
-
-<h2 id="leetcode-025">LeetCode 025</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-using namespace std;
-
-struct ListNode {
- 	int val;
-	ListNode *next;
-	ListNode(int x) : val(x), next(NULL) {}
-};
-
-//Read carefully what the question is asking you to do
-ListNode* reverseKGroup(ListNode* head, int k) {
-	if (head == NULL) return head;
-        if (k == 0 | k == 1) return head;
-	//Find size of list
-	ListNode* curr = head;
-	int sz = 0;
-	while(curr != NULL) {
-		curr = curr-&gt;next;
-		sz += 1;
-	}
-	cout &lt;&lt; &quot;Size is &quot; &lt;&lt; sz &lt;&lt; endl;
-	ListNode* curr1 = head;
-	ListNode* curr2 = curr1-&gt;next;
-	ListNode* temphead = head;
-	for (int j=0; j&lt;k-1; j++) {
-		head = head-&gt;next;
-	}
-	ListNode* temp;
-	if (k &gt; sz) k = sz;
-	int n = sz/k;
-	for (int i=0; i&lt;n; i++) {
-		for (int j=0; j&lt;k-1; j++) {
-			temp = curr2-&gt;next;
-			curr2-&gt;next = curr1;
-			curr1 = curr2;
-			curr2 = temp;		
-		}
-		/*Modify this part
-		temphead-&gt;next = curr2;
-		curr1 = curr2;
-		curr2 = curr2-&gt;next;
-		temphead = temphead-&gt;next;
-		*/
-	}
-	cout &lt;&lt; &quot;curr1 is &quot; &lt;&lt; curr1-&gt;val &lt;&lt; endl;	
-	cout &lt;&lt; &quot;curr2 is &quot; &lt;&lt; curr2-&gt;val &lt;&lt; endl;
-	cout &lt;&lt; &quot;temp is &quot; &lt;&lt; temp-&gt;val &lt;&lt; endl;
-	return head;
-}
-
-
-void printList(ListNode* head) {
-	ListNode* curr = head;	
-	while(curr != NULL) {
-		cout &lt;&lt; curr-&gt;val &lt;&lt; &quot; &quot;;
-		curr = curr-&gt;next;
-	}
-	cout &lt;&lt; endl;
-	return;
-
-}
-
-int main() {
-	ListNode* headNode = NULL;
-	headNode = new ListNode(1);
-	headNode-&gt;next = new ListNode(2);
-	headNode-&gt;next-&gt;next = new ListNode(3);
-	headNode-&gt;next-&gt;next-&gt;next = new ListNode(4);
-	headNode-&gt;next-&gt;next-&gt;next-&gt;next = new ListNode(5);
-	headNode-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next = new ListNode(6);
-	headNode-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next = new ListNode(7);
-	headNode-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next-&gt;next = new ListNode(8);
-	printList(headNode);
-	int K = 3;
-	ListNode* reversedList = reverseKGroup(headNode, 3);
-	printList(reversedList);
-}
-
-</code></pre>
-
-<h2 id="leetcode-035">LeetCode 035</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;    
-#include &lt;vector&gt;
-
-using namespace std;
-
-int searchInsert(vector&lt;int&gt;&amp; nums, int target) {
-	int spano = 0;
-	vector&lt;int&gt;::iterator it;
-	for (it = nums.begin(); it != nums.end(); it++) {
-		if (target &lt;= *it) {
-			break;
-		}
-		spano += 1;
-	}
-	return spano;
-}
-
-int main() {
-	vector&lt;int&gt; array;
-	array.push_back(2);
-	array.push_back(3);
-	array.push_back(3);
-	array.push_back(4);
-	array.push_back(5);
-	array.push_back(6);
-	array.push_back(6);
-	array.push_back(7);
-	int pos = searchInsert(array, 5);
-	cout &lt;&lt; pos &lt;&lt;endl;
-	return 0;
-}
-
-</code></pre>
-
-<h2 id="leetcode-070">LeetCode 070</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-
-using namespace std;
-
-//Using Combinations
-/*
-int climbStairs(int n) {
-	if (n == 0) return 0;
-	int ways = 1;
-	int denominator = 1;
-	int nominator = 1;
-	int m = 0;
-	for (int i = 1; i &lt; n/2+1; i++)
-	{
-		m = (i &lt; n-i) ? i : n-i;
-		for (int j = 0; j &lt; m; j++)
-		{
-			denominator *= n-i-j;
-			nominator *= i-j;
-		}
-		ways += denominator/nominator;
-		denominator = 1;
-		nominator = 1;
-	}
-	return ways;
-}
-*/
-
-//Dynamic Programming
-
-int climbStairs(int n)
-{
-	if (n == 0)
-		return 0;
-	if (n == 1)
-		return 1;
-	int step[n+1];
-	step[0] = 1;
-	step[1] = 1;
-	for (int i = 2; i &lt;= n; i++)
-	{
-		step[i] = step[i-1] + step[i-2];
-	}
-	return step[n];
-}
-
-
-//Brute force
-/*
-int climb_stairs(int i, int n)
-{
-	if (i &gt; n)
-	{
-		return 0;
-	}
-	if (i == n)
-	{
-		return 1;
-	}
-	return climb_stairs(i+1, n) + climb_stairs(i+2, n);
-}
-
-int climbStairs(int n)
-{
-	return climb_stairs(0,n);
-}
-*/
-
-
-
-
-int main()
-{
-	cout &lt;&lt; climbStairs(44) &lt;&lt; endl;
-	return 0;
-}
-</code></pre>
-
-<h2 id="leetcode-101">LeetCode 101</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
-using namespace std;
-
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
-
-///Iterative Method
-
-bool isSymmetric(TreeNode* root) 
-{
-	if (root == NULL) return true;
-	
-	queue&lt;TreeNode*&gt; q;
-	
-	q.push(root);
-	q.push(root);
-	
-	while (!q.empty()) {
-		TreeNode* leftNode = q.front();
-		q.pop();
-		TreeNode* rightNode = q.front();
-		q.pop();
-		
-		cout &lt;&lt; leftNode-&gt;val &lt;&lt; &quot; &quot; &lt;&lt; rightNode-&gt;val &lt;&lt;endl;
-		if (leftNode-&gt;val!=rightNode-&gt;val) return false;
-				
-				
-		if (leftNode-&gt;left!=NULL &amp; rightNode-&gt;right!=NULL) 
-		{
-			q.push(leftNode-&gt;left);
-			q.push(rightNode-&gt;right);
-		}
-		
-		else if (leftNode-&gt;left!=NULL | rightNode-&gt;right!=NULL)
-		{
-			return false;
-		}
-		
-		if (rightNode-&gt;left!=NULL &amp; leftNode-&gt;right!=NULL)
-		{
-			q.push(rightNode-&gt;left);
-			q.push(leftNode-&gt;right);
-		}
-
-		else if (rightNode-&gt;left!=NULL | leftNode-&gt;right!=NULL)
-		{
-			return false;
-		}
-	}
-	
-	return true;
-}
-
-int main() {
-	TreeNode* rt = new TreeNode(0);
-	rt-&gt;left = new TreeNode(1);
-	rt-&gt;right = new TreeNode(1);
-	rt-&gt;left-&gt;left = new TreeNode(3);
-	rt-&gt;left-&gt;right = new TreeNode(4);
-	rt-&gt;right-&gt;right = new TreeNode(3);
-	rt-&gt;right-&gt;left = new TreeNode(4);
-		
-	
-	vector&lt;int&gt; numList;
-	bool is = isSymmetric(rt);
-	cout &lt;&lt; &quot;The Tree is symmetric?&quot; &lt;&lt; is &lt;&lt; endl;
-	return 0;
-
-}
-
-
-</code></pre>
-
-<h2 id="leetcode-102">LeetCode 102</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
-using namespace std;
-
-struct TreeNode {
-	int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
-
-/*
-vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) 
-{
-	vector&lt;vector&lt;int&gt;&gt; traversal;
-	queue&lt;TreeNode*&gt; q;
-	vector&lt;int&gt; children;
-	if (root == NULL) return vector&lt;vector&lt;int&gt;&gt;();
-	q.push(root);
-	children.push_back(root-&gt;val);
-	traversal.push_back(children);
-	
-	while (!(q.empty())) 
-	{
-		children = vector&lt;int&gt; ();
-		int sz = q.size();
-		cout &lt;&lt; endl;
-		for (int i=0; i&lt;sz; i++)
-		{
-			TreeNode* currNode = q.front();
-			q.pop();
-			
-			if (currNode-&gt;left != NULL) 
-			{
-				q.push(currNode-&gt;left);
-				children.push_back(currNode-&gt;left-&gt;val);
-			}
-			if (currNode-&gt;right != NULL) 
-			{
-				q.push(currNode-&gt;right);
-				children.push_back(currNode-&gt;right-&gt;val);
-			}
-		} 
-		if (!children.empty())
-        {
-            traversal.push_back(children);
-        }
-	}
-	return traversal;
-}
-*/
-
-void helper(TreeNode* subroot, vector&lt;vector&lt;int&gt;&gt; &amp;traversal, int index)
-{
-	if (subroot == NULL) return;
-	if (index &gt; traversal.size()) 
-		traversal.push_back(vector&lt;int&gt;());
-	helper(subroot-&gt;left,traversal,index+1);
-	traversal[index-1].push_back(subroot-&gt;val);
-	helper(subroot-&gt;right,traversal,index+1);
-}
-
-vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) 
-{
-	vector&lt;vector&lt;int&gt;&gt; level_order;
-	helper(root,level_order,1);
-	return level_order;
-}
-
-
-int main() {
-	TreeNode* rt = new TreeNode(1);
-	rt-&gt;left = new TreeNode(2);
-	rt-&gt;right = new TreeNode(3);
-	rt-&gt;left-&gt;left = new TreeNode(4);
-	rt-&gt;right-&gt;left = new TreeNode(6);
-	rt-&gt;right-&gt;right = new TreeNode(7);
-
-    vector&lt;vector&lt;int&gt;&gt; TVS = levelOrder(rt);
-	
-	for (int i=0; i&lt;TVS.size(); i++)
-	{
-		for (int j=0; j&lt;TVS[i].size(); j++)
-		{
-			cout &lt;&lt; TVS[i][j] &lt;&lt; &quot; &quot;;
-		}
-		cout &lt;&lt; endl;
-	}
-	
-	return 0;
-}
-</code></pre>
-
-<h2 id="leetcode-103">LeetCode 103</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;stack&gt;
-using namespace std;
-
-struct TreeNode {
-	int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
-
-
-/*Iterative Method
-vector&lt;vector&lt;int&gt;&gt; zigzagLevelOrder(TreeNode* root) 
-{
-	vector&lt;vector&lt;int&gt;&gt; traversal;
-	stack&lt;TreeNode*&gt; s1;
-	stack&lt;TreeNode*&gt; s2;
-	vector&lt;int&gt; children;
-	if (root == NULL) return vector&lt;vector&lt;int&gt;&gt;();
-	s1.push(root);
-	int reverse = 0;
-	while (!(s1.empty() &amp; s2.empty())) 
-	{
-		children = vector&lt;int&gt;();
-		int sz1 = s1.size();
-		int sz2 = s2.size();
-		TreeNode* currNode;
-		if (reverse%2 == 0) {
-			for (int i = 0; i &lt; sz1; i++)
-			{
-				currNode = s1.top();
-				s1.pop();
-				children.push_back(currNode-&gt;val);
-				if (currNode-&gt;left != NULL) 
-				{
-					s2.push(currNode-&gt;left);
-				}
-				if (currNode-&gt;right != NULL) 
-				{
-					s2.push(currNode-&gt;right);
-				}
-			}
-		}
-		else {
-			for (int i = 0; i &lt; sz2; i++)
-			{
-				currNode = s2.top();
-				s2.pop();
-				children.push_back(currNode-&gt;val);
-				if (currNode-&gt;right != NULL)
-				{
-					s1.push(currNode-&gt;right);
-				}
-				if (currNode-&gt;left != NULL)
-				{
-					s1.push(currNode-&gt;left);
-				}
-			}
-		}
-		traversal.push_back(children);
-		reverse += 1;
-	}
-	return traversal;
-}
-*/
-
-void helper(TreeNode* subroot, vector&lt;vector&lt;int&gt;&gt; &amp;traversal, int index)
-{
-	if (subroot == NULL) return;
-	if (index &gt; traversal.size()) 
-		traversal.push_back(vector&lt;int&gt;());
-	helper(subroot-&gt;left,traversal,index+1);
-	if (index%2 == 1)
-		traversal[index-1].push_back(subroot-&gt;val);
-	else
-		traversal[index-1].insert(traversal[index-1].begin(),subroot-&gt;val);
-	helper(subroot-&gt;right,traversal,index+1);
-}
-
-vector&lt;vector&lt;int&gt;&gt; zigzagLevelOrder(TreeNode* root) 
-{
-	vector&lt;vector&lt;int&gt;&gt; level_order;
-	helper(root,level_order,1);
-	return level_order;
-}
-
-int main() {
-	TreeNode* rt = new TreeNode(1);
-	rt-&gt;left = new TreeNode(2);
-	rt-&gt;right = new TreeNode(3);
-	rt-&gt;left-&gt;left = new TreeNode(4);
-	rt-&gt;right-&gt;left = new TreeNode(6);
-	rt-&gt;right-&gt;right = new TreeNode(7);
-
-    vector&lt;vector&lt;int&gt;&gt; TVS = zigzagLevelOrder(rt);
-	
-	for (int i=0; i&lt;TVS.size(); i++)
-	{
-		for (int j=0; j&lt;TVS[i].size(); j++)
-		{
-			cout &lt;&lt; TVS[i][j] &lt;&lt; &quot; &quot;;
-		}
-		cout &lt;&lt; endl;
-	}
-	
-	return 0;
-}
-</code></pre>
-
-<h2 id="leetcode-104">LeetCode 104</h2>
-
-<pre><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;queue&gt;
-using namespace std;
-
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- };
- 
-/*Recursive Method
-int maxDepth(TreeNode* root) 
-{
-	if (root == NULL) return 0;
-	return 1+max(maxDepth(root-&gt;left), maxDepth(root-&gt;right));
-}
-*/
-
-//Iterative Method
-int maxDepth(TreeNode* root)
-{
-	queue&lt;TreeNode*&gt; q;
-	int layers = 0;
-	if (root == NULL) return 0;
-	q.push(root);
-	
-	while (!(q.empty())) 
-	{
-		int sz = q.size();
-		for (int i=0; i&lt;sz; i++)
-		{
-			TreeNode* currNode = q.front();
-			q.pop();
-			
-			if (currNode-&gt;left != NULL) 
-			{
-				q.push(currNode-&gt;left);
-			}
-			if (currNode-&gt;right != NULL) 
-			{
-				q.push(currNode-&gt;right);
-			}
-		}
-		layers++;
-	}
-	return layers;
-}
-int main() 
-{
-	TreeNode* root = new TreeNode(3);
-	root-&gt;left = new TreeNode(9);
-	root-&gt;right = new TreeNode(20);
-	root-&gt;right-&gt;left = new TreeNode(15);
-	root-&gt;right-&gt;right = new TreeNode(7);
-
-	
-	cout &lt;&lt; maxDepth(root) &lt;&lt; endl;
-}
-</code></pre>
-
-<h2 id="leetcode-105">LeetCode 105</h2>
-
-<pre><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;queue&gt;
-using namespace std;
-
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- };
-
-
-
-TreeNode* buildTree(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder) {
-	if (preorder.empty())
-	{
-		return NULL;
-	}
-	int start = 0;
-	int end = preorder.size();
-	TreeNode* root = helper(preorder, inorder, start, end);
-}
-
-TreeNode* helper(vector&lt;int&gt;&amp; preorder, vector&lt;int&gt;&amp; inorder, int inStart int inEnd)
-{
-	static int inPre = 0;	
-	int index = search(inorder, preorder[inPre]);
-	inPre++;
-	
-	
-	
-	subroot-&gt;left = helper(preorder, inorder, inStart, index-1);
-	subroot-&gt;right = helper(preorder, inorder, index+1, inEnd);
-	
-}
-
-
-
-int main()
-{
-    int in[] = {1,2,3,489866,5};  
-    char pre[] = { 'A', 'B', 'D', 'E', 'C', 'F' };  
-    int len = sizeof(in);  
-	cout &lt;&lt; len &lt;&lt; endl;
-}
-</code></pre>
-
-<h2 id="leetcode-965">LeetCode 965</h2>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-
-using namespace std;
-
-struct TreeNode {
-      int val;
-      TreeNode *left;
-      TreeNode *right;
-      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
-//Usually helper functions are void function. 
-void helper(TreeNode* subroot, int value, bool&amp; judge) {
-	if (subroot == NULL) return;
-	if (subroot-&gt;val != value) judge = false;
-	helper(subroot-&gt;left, value, judge);
-	helper(subroot-&gt;right, value, judge);
-}
- 
-bool isUnivalTree(TreeNode* root) {
-	if (root == NULL) return true;
-    int value = root-&gt;val;
-	bool isUT = true;
-	helper(root, value , isUT);
-	return isUT;
-}
-
-
-int main() {
-	TreeNode* first = new TreeNode(2);
-	TreeNode* second = new TreeNode(3);
-	TreeNode* third = new TreeNode(2);
-	TreeNode* fourth = new TreeNode(2);
-	TreeNode* fifth = new TreeNode(2);
-	TreeNode* null = NULL;
-	first-&gt;left = second;
-	first-&gt;right = third;
-	second-&gt;left = fourth;
-	second-&gt;right = fifth;
-	cout &lt;&lt; isUnivalTree(null) &lt;&lt; endl;
-	return 0;
-}
-</code></pre>
-
-<h3 id="did-you-find-this-page-helpful-consider-sharing-it-">Did you find this page helpful? Consider sharing it 🙌</h3>
+      <p>Please visit <a href="https://leetcode.com/uiuceceme" target="_blank">my LeetCode website</a>.</p>
 
     </div>
 
@@ -1676,6 +577,12 @@ int main() {
 
 
     
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/academic/">Academic</a>
+  
+</div>
 
 
 
@@ -1689,6 +596,10 @@ int main() {
 
 
 
+  
+  
+    
+  
   
 
 
@@ -1801,9 +712,6 @@ int main() {
 
     
     
-    
-    <script src="/js/mathjax-config.js"></script>
-    
 
     
     
@@ -1813,8 +721,6 @@ int main() {
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js" integrity="sha256-0w92bcB21IY5+rGI84MGj52jNfHNbXVeQLrZ0CGdjNY=" crossorigin="anonymous" title="mermaid"></script>
       
 
       
@@ -1826,8 +732,6 @@ int main() {
       
 
       
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 

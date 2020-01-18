@@ -13,12 +13,12 @@
   </url>
   
   <url>
-    <loc>https://diditong.github.io/project/gan-for-style-transfer/</loc>
+    <loc>https://diditong.github.io/tags/gan-deep-learning/</loc>
     <lastmod>2019-11-15T00:22:21+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://diditong.github.io/tags/gan-deep-learning/</loc>
+    <loc>https://diditong.github.io/project/cyclegan-for-style-transfer/</loc>
     <lastmod>2019-11-15T00:22:21+00:00</lastmod>
   </url>
   
@@ -28,28 +28,18 @@
   </url>
   
   <url>
-    <loc>https://diditong.github.io/tags/kdtree-data-structure/</loc>
-    <lastmod>2019-11-15T00:22:21+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://diditong.github.io/project/photo-mosaic/</loc>
-    <lastmod>2019-11-15T00:22:21+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://diditong.github.io/project/</loc>
+    <lastmod>2019-11-15T00:22:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://diditong.github.io/project/smart-water-ph-control/</loc>
     <lastmod>2019-11-15T00:22:21+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://diditong.github.io/tags/</loc>
     <lastmod>2019-11-15T00:22:21+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://diditong.github.io/post/algorithms/</loc>
-    <lastmod>2019-10-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -88,21 +78,33 @@
   </url>
   
   <url>
-    <loc>https://diditong.github.io/post/leetcode/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://diditong.github.io/post/</loc>
     <lastmod>2018-06-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://diditong.github.io/authors/admin/</loc>
+    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://diditong.github.io/tags/academic/</loc>
+    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://diditong.github.io/categories/</loc>
+    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://diditong.github.io/post/leetcode/</loc>
+    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://diditong.github.io/categories/demo/</loc>
+    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>

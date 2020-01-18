@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Academic | Jiashuo Tong</title>
+    <link>https://diditong.github.io/tags/academic/</link>
+      <atom:link href="https://diditong.github.io/tags/academic/index.xml" rel="self" type="application/rss+xml" />
+    <description>Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://diditong.github.io/img/icon-192.png</url>
+      <title>Academic</title>
+      <link>https://diditong.github.io/tags/academic/</link>
+    </image>
+    
+    <item>
+      <title>Data Structure &amp; Algorithms Exercise</title>
+      <link>https://diditong.github.io/post/leetcode/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://diditong.github.io/post/leetcode/</guid>
+      <description>&lt;p&gt;Please visit &lt;a href=&#34;https://leetcode.com/uiuceceme&#34; target=&#34;_blank&#34;&gt;my LeetCode website&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
